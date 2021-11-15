@@ -28,3 +28,7 @@ tic $HOME/.screen-256color.terminfo
 
 # install python provider for nvim
 pip3 install pynvim
+
+# Install ccls via snap :( , sadly it's only available on snap for fedora
+sudo dnf install snap && sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install ccls
