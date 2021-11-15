@@ -26,8 +26,8 @@ margin-bottom = 8
 
 ; Specify your network interface here
 [networkinterface]
-ethernet = "enp0s8"
-wlan = "net1"
+ethernet = "ifconfigeno1"
+wlan = "net1"   ; rtl8723de broke
 
 [solarized]
 back = #002b36
@@ -59,7 +59,7 @@ width = 100%
 height = 27
 fixed-center = false
 padding-right = 2
-font-0 = JetBrainsMonoMedium NF-Bold:size=8
+font-0 = JetBrainsMonoMedium NF-Bold:size=11
 
 background = ${solarized.back}
 foreground = ${solarized.base3}
