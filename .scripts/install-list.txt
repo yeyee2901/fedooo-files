@@ -1,3 +1,4 @@
+pavucontrol
 alacritty
 zsh
 gcc
