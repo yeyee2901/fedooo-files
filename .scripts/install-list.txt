@@ -1,3 +1,5 @@
+alacritty
+zsh
 gcc
 g++
 vim

@@ -17,8 +17,8 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 
 # Install rust things
 # Rust toolchain
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# cargo install exa bat
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install exa bat
 
 chmod +x $HOME/.scripts/lsp-install.sh
 $HOME/.scripts/lsp-install.sh
