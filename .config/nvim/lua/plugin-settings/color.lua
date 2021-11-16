@@ -34,7 +34,7 @@ M.solarized = function ()
 end
 
 -- For alternative
-M.neo_solarized = function()
+M.neo_solarized = function(transparent_line_number)
   local opts = {
     neosolarized_bold = 1,
     neosolarized_underline = 1,
@@ -57,12 +57,20 @@ M.neo_solarized = function()
   vim.cmd('highlight CmpItemKind guifg=#839496')
 
   vim.cmd("highlight Normal guibg=none")
-  vim.cmd("highlight LineNr guibg=none")
+
+  if transparent_line_number then
+    vim.cmd("highlight LineNr guibg=none")
+    vim.cmd("highlight TabLine gui=none guibg=none")
+    vim.cmd("highlight TabLineSel gui=none guibg=none guifg=#dc322f")
+  else
+    vim.cmd("highlight TabLine gui=none guibg=#073642")
+    vim.cmd("highlight TabLineFill gui=none guibg=#073642")
+    vim.cmd("highlight TabLineSel gui=none guibg=#073642 guifg=#dc322f")
+  end
+
+  vim.cmd("highlight! link SignColumn LineNr")
 
   -- Fix tabline highlighting
-  vim.cmd("highlight TabLine gui=none guibg=none")
-  vim.cmd("highlight TabLineFill gui=none guibg=none")
-  vim.cmd("highlight TabLineSel gui=none guibg=none guifg=#dc322f")
 
 end
 

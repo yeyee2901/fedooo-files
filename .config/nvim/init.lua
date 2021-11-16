@@ -21,8 +21,9 @@ require('plugin-settings.nvim-tree')
 require('cmp-lsp-treesitter')
 require('plugin-settings.telescope')
 require('plugin-settings.markdown')
-require('plugin-settings.color').neo_solarized()
 
--- I find it really confusing
+local transparent_line_number = true
+require('plugin-settings.color').neo_solarized(transparent_line_number)
+
 -- require('plugin-settings.indent-blankline')
 
