@@ -51,6 +51,7 @@ base3 = #fdf6e3
 
 ; MAIN STATUS BAR, TOP ONLY
 [bar/main]
+monitor = ${env:MONITOR:}
 modules-left = i3
 modules-center = date
 modules-right = cpu memory wlan eth
