@@ -103,6 +103,9 @@ require('packer').startup(function()
   -- Distant.nvim
   -- SSH editing like Visual Studio Code Remote
   use {'chipsenkbeil/distant.nvim'}
+
+  -- Show indentation visual helper (to avoid confusion)
+  -- use {'lukas-reineke/indent-blankline.nvim'}
 end)
 
 if new_install then

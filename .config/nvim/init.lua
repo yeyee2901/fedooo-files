@@ -1,6 +1,6 @@
---  _   _                          _             
--- | \ | |   ___    ___   __   __ (_)  _ __ ___  
--- |  \| |  / _ \  / _ \  \ \ / / | | | '_ ` _ \ 
+--  _   _                          _
+-- | \ | |   ___    ___   __   __ (_)  _ __ ___
+-- |  \| |  / _ \  / _ \  \ \ / / | | | '_ ` _ \
 -- | |\  | |  __/ | (_) |  \ V /  | | | | | | | |
 -- |_| \_|  \___|  \___/    \_/   |_| |_| |_| |_|
 --
@@ -8,7 +8,7 @@
 -- by: yeyee2901
 -- main machine: Fedora 35 - i3 edition
 -- 15 November 2021
-                                              
+
 require('basic-settings')
 require('packer-plugins-setup')
 require('keymap')
@@ -22,3 +22,7 @@ require('cmp-lsp-treesitter')
 require('plugin-settings.telescope')
 require('plugin-settings.markdown')
 require('plugin-settings.color').neo_solarized()
+
+-- I find it really confusing
+-- require('plugin-settings.indent-blankline')
+
