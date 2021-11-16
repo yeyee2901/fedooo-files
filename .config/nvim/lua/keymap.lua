@@ -178,9 +178,9 @@ _noremap('n', '<CR>v',          '<cmd>VimwikiVSplitLink<CR>')
 -- 3. All default mapping that are unchanged will still be available
 vim.g.VM_default_mappings = 0
 vim.g.VM_maps = {
-  ['Find Under']         = '<M-C-CR>',
-  ["Select Cursor Down"] = '<M-C-Down>',
-  ["Select Cursor Up"]   = '<M-C-Up>',
+  ['Find Under']         = '<M-C-m>',
+  ['Select Cursor Down'] = '<M-C-Down>',
+  ['Select Cursor Up']   = '<M-C-Up>',
 }
 
 -- Enable mouse support for creating cursors
