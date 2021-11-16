@@ -26,8 +26,9 @@ margin-bottom = 8
 
 ; Specify your network interface here
 [networkinterface]
-ethernet = "ifconfigeno1"
-wlan = "net1"   ; rtl8723de broke
+tethering = "ifconfigeno1"
+ethernet = "eno1"
+wlan = "wlo1"
 
 [solarized]
 back = #002b36
