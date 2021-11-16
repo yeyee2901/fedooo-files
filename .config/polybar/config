@@ -26,8 +26,7 @@ margin-bottom = 8
 
 ; Specify your network interface here
 [networkinterface]
-tethering = "ifconfigeno1"
-ethernet = "eno1"
+wired = "eno1"
 wlan = "wlo1"
 
 [solarized]
@@ -128,8 +127,8 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU"
-format-prefix-foreground = ${solarized.base3}
+format-prefix = "CPU "
+format-prefix-foreground = ${solarized.magenta}
 format-underline = ${solarized.magenta}
 label = %percentage:2%%
 
@@ -138,19 +137,19 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = "RAM "
-format-prefix-foreground = ${solarized.base3}
+format-prefix-foreground = ${solarized.violet}
 format-underline = ${solarized.violet}
 label = %percentage_used%%
 
 
 [module/eth]
 type = internal/network
-interface = ${networkinterface.ethernet}
+interface = ${networkinterface.wired}
 interval = 3
 format-connected-underline = ${solarized.yellow}
 format-connected-prefix = "ETH: "
-format-connected-prefix-foreground = ${solarized.base2}
-label-connected = %local_ip%
+format-connected-prefix-foreground = ${solarized.yellow}
+label-connected = "%downspeed% %local_ip%"
 
 
 [module/wlan]
@@ -158,10 +157,9 @@ type = internal/network
 interface = ${networkinterface.wlan}
 interval = 3
 format-connected-prefix = "WLAN: "
-format-connected-prefix-foreground = ${solarized.base2}
+format-connected-prefix-foreground = ${solarized.yellow}
 format-connected-underline = ${solarized.yellow}
-label-connected = %essid%
-format-disconnected =
+label-connected = "%downspeed% %essid%"
 
 
 [settings]
