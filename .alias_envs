@@ -27,3 +27,5 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Add pip install path to $PATH
 export PATH=$PATH:$HOME/.local/bin/
+
+export EDITOR="vi"
