@@ -10,6 +10,7 @@ tmux
 htop
 rofi
 polybar
+compton
 nitrogen
 python3-pip
 nodejs
@@ -18,5 +19,4 @@ figlet
 flameshot
 ripgrep
 libreoffice
-compton
-neofetch
+gimp
