@@ -93,7 +93,7 @@ _noremap('n', '<C-u>',       '<cmd>lua require("lspsaga.action").smart_scroll_wi
 _noremap('n', '<C-d>',       '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>')
 _noremap('n', '<Leader>lr',  '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>')
 _noremap('n', '<Leader>ld',  '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>')
-_noremap('n', '<Leader>la',  '<cmd>lua require("lspsaga.codeaction").code_action()<CR>')
+_noremap('n', '<Leader>la',  '<cmd>lua require("lspsaga.codeaction").range_code_action()<CR>')
 _noremap('n', '<Leader>j',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_next()<CR>')
 _noremap('n', '<Leader>k',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>')
 _noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
@@ -110,7 +110,6 @@ _noremap('n', '<Leader>gl', '<cmd>diffget //3<CR>')
 
 -- PLUGIN: Markdown Previewer
 _noremap('n', '<Leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
-_noremap('n', '<Leader>mi', '<cmd>call mdip#MarkdownClipboardImage()<CR>')
 
 
 -- PLUGIN: Tree-sitter
@@ -177,9 +176,9 @@ _noremap('n', '<CR>v',          '<cmd>VimwikiVSplitLink<CR>')
 -- 1. Declare empty global table
 -- 2. Fill in the remapping as needed
 -- 3. All default mapping that are unchanged will still be available
+vim.g.VM_default_mappings = 0
 vim.g.VM_maps = {
-  ['Find Under']         = '<C-m>',
-  ['Find Subword Under'] = '<C-m>',
+  ['Find Under']         = '<M-C-CR>',
   ["Select Cursor Down"] = '<M-C-Down>',
   ["Select Cursor Up"]   = '<M-C-Up>',
 }
@@ -193,12 +192,6 @@ vim.g.VM_mouse_mappings = true
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
 _noremap('n', '<Leader>tu',    '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
-
--- LaTeX Stuffs
-_noremap('n', ';ta', '<cmd>TeXall<CR>')
-_noremap('n', ';tt', '<cmd>TeXmake<CR>')
-_noremap('n', ';tb', '<cmd>TeXbib<CR>')
-
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
