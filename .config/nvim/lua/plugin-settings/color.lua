@@ -50,7 +50,7 @@ M.neo_solarized = function()
 
   vim.opt.background = "dark"
 
-  lualine.setup_lualine('solarized')
+  lualine.setup_lualine('solarized_dark')
   vim.cmd('colorscheme NeoSolarized')
 
   -- so my eyes don't hurt!

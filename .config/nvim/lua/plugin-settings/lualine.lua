@@ -41,14 +41,14 @@ M.setup_lualine = function(theme)
       sections = {
 
         -- A component must be a table, not sequential args
-        lualine_a = {{'mode'}},
-        lualine_b = {
+        lualine_a = { 'mode' },
+        lualine_b = { 
+        },
+        lualine_c = {
           {
             'filetype',
             colored = true
           },
-        },
-        lualine_c = {
           { 'filename', path = 1, },
           { 'diagnostics',
             sources = {'nvim_lsp'},
@@ -61,18 +61,20 @@ M.setup_lualine = function(theme)
         },
 
         -- right section
-        lualine_x = {  },
-        lualine_y = {
+        lualine_x = {
           {
-             'diff',
-             colored = true,
-             color_added = '#16f70a',
-             color_modified = '#dff705',
-             color_removed = '#ff0000',
-             symbols = {added = ' ', modified = '柳 ', removed = ' '},
+            'diff',
+            colored = true,
+            color_added = '#16f70a',
+            color_modified = '#dff705',
+            color_removed = '#ff0000',
+            symbols = {added = ' ', modified = '柳 ', removed = ' '},
           },
         },
-        lualine_z = { 'branch' },
+        lualine_y = { },
+        lualine_z = {
+          { 'branch' },
+        },
       },
 
       inactive_sections = {
