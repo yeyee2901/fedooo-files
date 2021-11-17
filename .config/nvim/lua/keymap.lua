@@ -89,6 +89,7 @@ _noremap('n', '<Leader>p',   '<cmd>lua require("lspsaga.provider").preview_defin
 _noremap('n', 'gd',          '<cmd>lua vim.lsp.buf.definition()<CR>')
 _noremap('n', 'gD',          '<cmd>lua vim.lsp.buf.declaration()<CR>')
 _noremap('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>')
+_noremap('n', '<Leader>K',   '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 _noremap('n', '<C-u>',       '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>')
 _noremap('n', '<C-d>',       '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>')
 _noremap('n', '<Leader>lr',  '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>')
@@ -191,7 +192,7 @@ vim.g.VM_mouse_mappings = true
 
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
-_noremap('n', '<Leader>tu',    '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
+_noremap('n', '<Leader>tu', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
