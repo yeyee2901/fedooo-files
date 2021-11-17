@@ -72,6 +72,8 @@ module-margin-right = 2
 
 tray-position = right
 tray-padding = 2
+tray-reparent = true
+tray-background = ${solarized.back}
 
 cursor-click = pointer
 
