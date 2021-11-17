@@ -47,10 +47,10 @@ _noremap('n', '<S-r>', '<C-w>r')
 -- Resize window
 -- Up, right    = increase
 -- down, left   = decrease
-_noremap('n', '<M-k>',    '<C-w>+')
-_noremap('n', '<M-j>',  '<C-w>-')
+_noremap('n', '<M-k>', '<C-w>+')
+_noremap('n', '<M-j>', '<C-w>-')
 _noremap('n', '<M-l>', '<C-w>>')
-_noremap('n', '<M-h>',  '<C-w><')
+_noremap('n', '<M-h>', '<C-w><')
 
 -- Create splits
 _noremap('n', 'sv', '<C-w>v')
@@ -68,12 +68,6 @@ _noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 
 -- Plugin specific keymaps -------------------------------------------------------
 -- Plugins are prefixed with <Leader> (space key)
-
--- PLUGIN: CMake
-_noremap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>')
-_noremap('n', '<Leader>cb', '<cmd>CMakeBuild<CR>')
-_noremap('n', '<Leader>cq', '<cmd>CMakeClose<CR>')
-
 
 -- PLUGIN: Nvim-tree
 _noremap('n', '<Leader>n', '<cmd>NvimTreeToggle<CR>')
