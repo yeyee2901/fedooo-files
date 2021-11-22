@@ -11,7 +11,7 @@
 
 # VARIABLE DECLARATIONS
 set $mod Mod4
-set $terminal alacritty
+set $terminal kitty
 
 # Disable bar, use polybar instead
 bar { 
