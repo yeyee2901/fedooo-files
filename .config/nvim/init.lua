@@ -9,6 +9,7 @@
 -- main machine: Fedora 35 - i3 edition
 -- 15 November 2021
 
+vim.cmd[[set termguicolors]]
 require('basic-settings')
 require('packer-plugins-setup')
 require('keymap')
@@ -26,4 +27,3 @@ local transparent_line_number = true
 require('plugin-settings.color').neo_solarized(transparent_line_number)
 
 -- require('plugin-settings.indent-blankline')
-

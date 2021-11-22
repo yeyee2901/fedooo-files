@@ -20,3 +20,4 @@ flameshot
 ripgrep
 libreoffice
 gimp
+kitty
