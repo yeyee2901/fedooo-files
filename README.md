@@ -1,4 +1,7 @@
 # Dotfiles Fedora
+My minimalistic dotfiles for Fedora 35 - i3 edition
+![image](https://user-images.githubusercontent.com/55247343/142818398-c57ede17-50e5-4e74-9780-c956d7adc709.png)
+
 ## Fresh install
 
 1. Cloning the repository
