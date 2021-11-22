@@ -184,6 +184,4 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # AUTOSTART SCRIPTS
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id compton
+exec_always --no-startup-id $HOME/.config/i3/autostart.sh
