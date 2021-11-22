@@ -6,9 +6,9 @@ augroup END
 
 augroup CIndentation
   autocmd!
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,html,css set tabstop=2
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,html,css set softtabstop=2
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,html,css set shiftwidth=2
+  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set tabstop=2
+  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set softtabstop=2
+  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set shiftwidth=2
 augroup END
 
 " For c like files, clang formatting insist using 2 spaces
