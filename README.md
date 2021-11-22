@@ -27,11 +27,12 @@ $HOME/.scripts/fresh-install.sh
 ## Features
 - **i3** -  window manager
 - **rofi** - Program launcher ( Win + Enter )
-- **Alacritty** - Terminal with JetBrains Mono Nerd Font ( Win + t )
+- **Alacritty & Kitty** - Graphics enchanced Terminal with JetBrains Mono Nerd Font ( Win + t )
    - Font JetBrains Mono Nerd Font in ~/.fonts/
-- **Tmux** - For terminal session manager, supporting italics
+   - default: **Kitty**
+- **Tmux** - For terminal session management
 - **polybar** - Customizable status bar
-- fresh install script
+- fresh install script with customizable install list
 
 - EDITOR: **Neovim 0.5.1** :
   - **Packer** - Plugin manager
