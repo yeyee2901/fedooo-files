@@ -249,8 +249,10 @@ require('nvim-treesitter.configs').setup {
     'html',
     'css',
     'javascript',
+    'typescript',
+    'tsx',
     'php',
-    'python'
+    'python',
   },
 
   highlight = {
