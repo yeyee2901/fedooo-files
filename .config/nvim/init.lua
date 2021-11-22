@@ -17,7 +17,6 @@ vim.cmd[[source ~/.config/nvim/autocmd.vim]]
 
 -- PLUGIN SETTINGS
 vim.cmd[[source ~/.config/nvim/lua/plugin-settings/tabline.vim]]
--- require('plugin-settings.color').solarized()
 require('plugin-settings.nvim-tree')
 require('cmp-lsp-treesitter')
 require('plugin-settings.telescope')
@@ -25,5 +24,6 @@ require('plugin-settings.markdown')
 
 local transparent_line_number = true
 require('plugin-settings.color').neo_solarized(transparent_line_number)
+-- require('plugin-settings.color').solarized()
 
 -- require('plugin-settings.indent-blankline')

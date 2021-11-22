@@ -10,7 +10,7 @@ M.solarized = function ()
   local opts = {
     termguicolors = true,
     solarized_italics = true,
-    solarized_visibility = 'normal',
+    solarized_visibility = 'high',
     solarized_diffmode = 'high',
     solarized_termtrans = 0
   }
@@ -36,9 +36,9 @@ end
 -- For alternative
 M.neo_solarized = function(transparent_line_number)
   local opts = {
-    neosolarized_bold = 1,
-    neosolarized_underline = 1,
-    neosolarized_italic = 1,
+    neosolarized_bold = 0,
+    neosolarized_underline = 0,
+    neosolarized_italic = 0,
     neosolarized_vertSplitBgTrans = 1,
     neosolarized_visibility = "high",
     neosolarized_termBoldAsBright = 1
@@ -55,6 +55,7 @@ M.neo_solarized = function(transparent_line_number)
 
   -- so my eyes don't hurt!
   vim.cmd('highlight CmpItemKind guifg=#839496')
+  
 
   vim.cmd("highlight Normal guibg=none")
 
