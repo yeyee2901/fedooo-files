@@ -7,7 +7,7 @@
 # yeyee2901
 
 env:
-  TERM: screen-256color
+  TERM: xterm-256color
 
 window:
   dimensions:
@@ -73,6 +73,9 @@ draw_bold_text_with_bright_colors: true
 # - Solarized
 colorschemes:
   default: &default
+    primary:
+      background: '#121212'
+
     normal:
       black:   '#1d1f21'
       red:     '#cc6666'
@@ -93,31 +96,16 @@ colorschemes:
       cyan:    '#70c0b1'
       white:   '#eaeaea'
 
-    # Dim colors
-    #
-    # If the dim colors are not set, they will be calculated automatically based
-    # on the `normal` colors.
-    dim:
-      black:   '#131415'
-      red:     '#864343'
-      green:   '#777c44'
-      yellow:  '#9e824c'
-      blue:    '#556a7d'
-      magenta: '#75617b'
-      cyan:    '#5b7d78'
-      white:   '#828482'
 
   solarized: &solarized
     primary:
       background: '#002b36' # base03
       foreground: '#839496' # base0
 
-      # Cursor colors
     cursor:
       text:   '#002b36' # base03
       cursor: '#839496' # base0
 
-    # Normal colors
     normal:
       black:   '#073642' # base02
       red:     '#dc322f' # red
