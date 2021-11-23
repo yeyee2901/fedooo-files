@@ -184,9 +184,13 @@ vim.g.VM_maps = {
 vim.g.VM_mouse_mappings = true
 
 
+-- PLUGIN: Formatter.nvim
+_noremap('n', '<Leader>ff', '<cmd>Format<CR>')
+
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
 _noremap('n', '<Leader>tu', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
+

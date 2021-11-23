@@ -9,7 +9,7 @@ local distant_telescope = {}
 -- Specify your servers & hosts pairs here!
 distant_telescope.servers = {
   ["Pemrogaman Web - server bima.eng.wima.ac.id"] = {
-    host = "bima.eng.wima.ac.id",
+    host = "202.46.29.157",
     user = "te18003"
   },
 

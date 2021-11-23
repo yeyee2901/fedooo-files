@@ -155,8 +155,13 @@ local LSP_signature_setup = {
     }
 
     -- autoformat on save
+    -- disable for tsserver, will use prettier instead
+    if client.name == 'tsserver' or client.name == 'ccls' or client.name == 'html' or client.name == 'cssls' then
+      client.resolved_capabilities.document_formatting = false
+    end
+
     if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()")
+      vim.cmd  [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     end
   end
 }
@@ -177,7 +182,7 @@ lsp_saga.init_lsp_saga{
   border_style = 'round',
 }
 
--- for capabilities from 'nvim_lsp' source
+-- update LSP capabilities for nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true

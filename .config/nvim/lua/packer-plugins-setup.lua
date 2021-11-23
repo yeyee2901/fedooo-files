@@ -106,6 +106,10 @@ require('packer').startup(function()
 
   -- Show indentation visual helper (to avoid confusion)
   -- use {'lukas-reineke/indent-blankline.nvim'}
+  --
+
+  -- formatter for typescript / javascript because tsserver suck
+  use{'mhartington/formatter.nvim'}
 end)
 
 if new_install then

@@ -19,6 +19,7 @@ vim.cmd[[source ~/.config/nvim/autocmd.vim]]
 vim.cmd[[source ~/.config/nvim/lua/plugin-settings/tabline.vim]]
 require('plugin-settings.nvim-tree')
 require('cmp-lsp-treesitter')
+require('plugin-settings.formatter')
 require('plugin-settings.telescope')
 require('plugin-settings.markdown')
 
