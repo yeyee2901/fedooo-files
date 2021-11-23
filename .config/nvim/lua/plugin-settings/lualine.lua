@@ -29,77 +29,77 @@ local M = {}
 -- wombat (like seoul256, but lighter)
 
 M.setup_lualine = function(theme)
-    require('lualine').setup {
-      options = {
-        component_separators = {'', ''},
-        section_separators = {'', ''},
-        theme = theme,
+	require("lualine").setup({
+		options = {
+			component_separators = { "", "" },
+			section_separators = { "", "" },
+			theme = theme,
 
-        icons_enabled = true,
-        disabled_filetypes = {}
-      },
-      sections = {
+			icons_enabled = true,
+			disabled_filetypes = {},
+		},
+		sections = {
 
-        -- A component must be a table, not sequential args
-        lualine_a = { 'mode' },
-        lualine_b = { 
-        },
-        lualine_c = {
-          {
-            'filetype',
-            colored = true
-          },
-          { 'filename', path = 1, },
-          { 'diagnostics',
-            sources = {'nvim_lsp'},
-            symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
-            color_error = '#ff0000',
-            color_warn = '#dff705',
-            color_info = '#16f70a',
-            color_hint = '#05d8f0',
-          },
-        },
+			-- A component must be a table, not sequential args
+			lualine_a = { "mode" },
+			lualine_b = {},
+			lualine_c = {
+				{
+					"filetype",
+					colored = true,
+				},
+				{ "filename", path = 1 },
+				{
+					"diagnostics",
+					sources = { "nvim_lsp" },
+					symbols = { error = " ", warn = " ", info = " ", hint = " " },
+					color_error = "#ff0000",
+					color_warn = "#dff705",
+					color_info = "#16f70a",
+					color_hint = "#05d8f0",
+				},
+			},
 
-        -- right section
-        lualine_x = {
-          {
-            'diff',
-            colored = true,
-            color_added = '#16f70a',
-            color_modified = '#dff705',
-            color_removed = '#ff0000',
-            symbols = {added = ' ', modified = '柳 ', removed = ' '},
-          },
-        },
-        lualine_y = { },
-        lualine_z = {
-          { 'branch' },
-        },
-      },
+			-- right section
+			lualine_x = {
+				{
+					"diff",
+					colored = true,
+					color_added = "#16f70a",
+					color_modified = "#dff705",
+					color_removed = "#ff0000",
+					symbols = { added = " ", modified = "柳 ", removed = " " },
+				},
+			},
+			lualine_y = {},
+			lualine_z = {
+				{ "branch" },
+			},
+		},
 
-      inactive_sections = {
-        lualine_a = {
-          {
-            'filetype',
-            colored = true
-          },
-          {
-            'filename',
-            path = 0,
-          },
-        },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_y = {},
-        lualine_z = {}
-      },
+		inactive_sections = {
+			lualine_a = {
+				{
+					"filetype",
+					colored = true,
+				},
+				{
+					"filename",
+					path = 0,
+				},
+			},
+			lualine_b = {},
+			lualine_c = {},
+			lualine_y = {},
+			lualine_z = {},
+		},
 
-      -- tabline = {
-      --   lualine_a = {},
-      --   lualine_b = {},
-      --   lualine_c = {},
-      -- },
-    }
+		-- tabline = {
+		--   lualine_a = {},
+		--   lualine_b = {},
+		--   lualine_c = {},
+		-- },
+	})
 end
 
 return M

@@ -15,13 +15,8 @@ chmod +x $HOME/ohmyzsh-install.sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
-# Install rust things
-# Rust toolchain
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install exa bat
-
 chmod +x $HOME/.scripts/lsp-install.sh
-$HOME/.scripts/lsp-install.sh
+$HOME/.scripts/node-install.sh
 
 # Apply italics for tmux
 tic $HOME/.screen-256color.terminfo
@@ -32,3 +27,10 @@ pip3 install pynvim
 # Install ccls via snap :( , sadly it's only available on snap for fedora
 sudo dnf install snap && sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install ccls
+
+# Install rust things
+# Rust toolchain
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install exa bat
+cargo install stylua
+

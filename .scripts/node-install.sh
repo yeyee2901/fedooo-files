@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Language Servers from NPM registry
-npm i -g install \
+npm i -g \
     bash-language-server \
     intelephense \
     pyright \
     typescript \
     typescript-language-server \
     vim-language-server \
-    vscode-langservers-extracted
+    vscode-langservers-extracted \
+    clang-format
 
 # Sadly, on fedora, ccls is not available on the registry
 # we have to take a roundabout path to SNAP :)
