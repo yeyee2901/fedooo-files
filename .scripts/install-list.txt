@@ -21,3 +21,4 @@ ripgrep
 libreoffice
 gimp
 kitty
+xset
