@@ -91,75 +91,41 @@ cmp.setup {
   },
 }
 
--- LSP DIAGNOSTIC
-local default_settings = {
-  virtual_text = true,
-  underline = true,
-  signs = true,
-}
-
--- Define symbols for diagnostic signs
-vim.cmd 'sign define LspDiagnosticsSignError text=  texthl=LspDiagnosticsSignError linehl= numhl='
-vim.cmd 'sign define LspDiagnosticsSignWarning text=  texthl=LspDiagnosticsSignWarning linehl= numhl='
-vim.cmd 'sign define LspDiagnosticsSignInformation text=  texthl=LspDiagnosticsSignInformation linehl= numhl='
-vim.cmd 'sign define LspDiagnosticsSignHint text=  texthl=LspDiagnosticsSignHint linehl= numhl='
-
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  default_settings
-)
-
 -- LSP START
 -- If you want to install & activate the LSP, go to:
 --      https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
---
--- And then search your desired Language Server, install it in your machine.
--- Neovim doesn't launch the Language Server, Neovim is the CLIENT. So you have
--- to download the language server manually.
---
--- After you download the language server, you have to connect Neovim to LSP using:
---
---      require('lspconfig').<language_server>.setup{}
---
--- Or if you want to enable the LSP_signature_setup for better code hover documentation:
---
---      require('lspconfig').<language_server>.setup(LSP_signature_setup)
---
--- The name of <language_server> must match with the one available at file CONFIG.md
 local lspconfig = require 'lspconfig'
 local util = require('lspconfig').util
 
-local LSP_signature_setup = {
-  on_attach = function(client, bufnr)
-    -- Better pop up documentation
-    require('lsp_signature').on_attach {
-      bind = true, -- Mandatory for config
-      doc_lines = 5,
-      floating_window = true,
-      fix_pos = false,
-      hint_enable = true,
-      hint_prefix = '<> ',
-      hint_scheme = 'String',
-      use_lspsaga = true,
-      hi_parameter = 'Search',
-      max_height = 12,
-      max_width = 120,
-      handler_opts = {
-        border = 'double', -- single/double/shadow
-      },
-    }
+local custom_on_attach = function(client, bufnr)
+  -- Better UI
+  require('lsp_signature').on_attach {
+    bind = true, -- Mandatory for config
+    doc_lines = 5,
+    floating_window = true,
+    fix_pos = false,
+    hint_enable = true,
+    hint_prefix = '<> ',
+    hint_scheme = 'String',
+    use_lspsaga = true,
+    hi_parameter = 'Search',
+    max_height = 12,
+    max_width = 120,
+    handler_opts = {
+      border = 'double', -- single/double/shadow
+    },
+  }
 
-    -- autoformat on save
-    -- disable for tsserver, will use prettier instead
-    if client.name == 'tsserver' or client.name == 'ccls' or client.name == 'html' or client.name == 'cssls' then
-      client.resolved_capabilities.document_formatting = false
-    end
+  -- autoformat on save
+  -- disable for tsserver, will use prettier instead
+  if client.name == 'tsserver' or client.name == 'ccls' or client.name == 'html' or client.name == 'cssls' then
+    client.resolved_capabilities.document_formatting = false
+  end
 
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    end
-  end,
-}
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  end
+end
 
 -- LSPSaga
 local lsp_saga = require 'lspsaga'
@@ -169,7 +135,7 @@ lsp_saga.init_lsp_saga {
   warn_sign = '',
   hint_sign = '',
   infor_sign = '',
-  dianostic_header_icon = '  ',
+  dianostic_header_icon = '[ERROR]  ',
   max_preview_lines = 10, -- preview lines for provider functions.
   code_action_prompt = {
     enable = false,
@@ -184,51 +150,51 @@ capabilities.snippetSupport = true
 
 lspconfig.rust_analyzer.setup {
   filetypes = { 'rust' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.ccls.setup {
   filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.vimls.setup {
   filetypes = { 'vim' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.pyright.setup {
   filetypes = { 'python' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.bashls.setup {
   filetypes = { 'sh', 'zsh' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.cmake.setup {
   filetypes = { 'cmake' },
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
 }
 
 lspconfig.html.setup {
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.cssls.setup {
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
 lspconfig.tsserver.setup {
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
   init_options = { hostInfo = 'neovim' },
   filetypes = {
@@ -239,13 +205,55 @@ lspconfig.tsserver.setup {
     'typescriptreact',
     'typescript.tsx',
   },
+
+  -- to prioritize tsconfig.json for root directory
   root_dir = function(fname)
     return util.root_pattern 'tsconfig.json'(fname) or util.root_pattern('package.json', 'jsconfig.json', '.git')(fname)
   end,
 }
 
+-- now eslint is supported
+lspconfig.eslint.setup {
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+  },
+  settings = {
+    codeAction = {
+      disableRuleComment = {
+        enable = true,
+        location = 'separateLine',
+      },
+      showDocumentation = {
+        enable = true,
+      },
+    },
+    codeActionOnSave = {
+      enable = false,
+      mode = 'all',
+    },
+    format = true,
+    nodePath = '',
+    onIgnoredFiles = 'off',
+    packageManager = 'npm',
+    quiet = false,
+    rulesCustomizations = {},
+    run = 'onType',
+    useESLintClass = false,
+    validate = 'on',
+    workingDirectory = {
+      mode = 'auto',
+    },
+  },
+}
+
+
 lspconfig.intelephense.setup {
-  on_attach = LSP_signature_setup.on_attach,
+  on_attach = custom_on_attach,
   capabilities = capabilities,
 }
 
@@ -264,6 +272,10 @@ require('nvim-treesitter.configs').setup {
     'tsx',
     'php',
     'python',
+    'vim',
+    'toml',
+    'json',
+    'latex',
   },
 
   highlight = {
@@ -313,3 +325,4 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
