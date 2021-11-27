@@ -102,7 +102,6 @@ local custom_on_attach = function(client, bufnr)
   require('lsp_signature').on_attach {
     bind = true, -- Mandatory for config
     doc_lines = 5,
-    floating_window = true,
     fix_pos = false,
     hint_enable = true,
     hint_prefix = '<> ',
@@ -114,6 +113,10 @@ local custom_on_attach = function(client, bufnr)
     handler_opts = {
       border = 'double', -- single/double/shadow
     },
+
+    -- The signature floating_window is reaaaallyy big, and i have to
+    -- disable it so I can read the completion pop up menu
+    floating_window = false,
   }
 
   -- autoformat on save
@@ -183,14 +186,20 @@ lspconfig.cmake.setup {
   on_attach = custom_on_attach,
 }
 
-lspconfig.html.setup {
-  on_attach = custom_on_attach,
-  capabilities = capabilities,
-}
+-- lspconfig.html.setup {
+--   on_attach = custom_on_attach,
+--   capabilities = capabilities,
+-- }
 
-lspconfig.cssls.setup {
+-- lspconfig.cssls.setup {
+--   on_attach = custom_on_attach,
+--   capabilities = capabilities,
+-- }
+
+lspconfig.emmet_ls.setup{
+  filetypes = {'html' , 'css'},
   on_attach = custom_on_attach,
-  capabilities = capabilities,
+  capabilities = capabilties
 }
 
 lspconfig.tsserver.setup {
@@ -212,7 +221,7 @@ lspconfig.tsserver.setup {
   end,
 }
 
--- now eslint is supported
+-- now eslint is supported as per October update
 lspconfig.eslint.setup {
   filetypes = {
     'javascript',
@@ -250,7 +259,6 @@ lspconfig.eslint.setup {
     },
   },
 }
-
 
 lspconfig.intelephense.setup {
   on_attach = custom_on_attach,
@@ -325,4 +333,3 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
-

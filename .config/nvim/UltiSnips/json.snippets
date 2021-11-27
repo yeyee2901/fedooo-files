@@ -7,8 +7,7 @@ snippet eslintrc_react "Base config for eslintrc"
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": 2018
+    }
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
@@ -19,8 +18,64 @@ snippet eslintrc_react "Base config for eslintrc"
         "varsIgnorePattern": "^_"
       }
     ],
+
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "warn",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "warn",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error",
+
     "react/display-name": 0,
     "react/react-in-jsx-scope": "off"
+  }
+}
+endsnippet
+
+snippet eslint_typescript "Eslint for typescript"
+{
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      
+  },
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "warn",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "warn",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error"
   }
 }
 endsnippet
