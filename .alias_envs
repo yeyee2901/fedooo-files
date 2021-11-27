@@ -21,10 +21,16 @@ alias tka='t kill-server'
 alias v="vim"
 alias nv="nvim"
 
+# exa
+alias l='exa -g --icons'
+alias ll='exa -g --icons -l'
+alias la='exa -g --icons -la'
+
 # Dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Add pip install path to $PATH
 export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
 
 export EDITOR="vi"
