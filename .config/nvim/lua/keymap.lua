@@ -69,10 +69,16 @@ _noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 _noremap('n', '<Leader>n', '<cmd>NvimTreeToggle<CR>')
 
 -- PLUGIN: LSP stuffs (I don't know if there's a more proper way, contact me if you know)
+-- Basic LSP stuffs
 _noremap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 _noremap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 _noremap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+_noremap('n', '<Leader>r', '<cmd>lua vim.lsp.buf.references()<CR>')
 _noremap('n', '<Leader>K', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+
+-- Diagnostic
+_noremap('n', '<Leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+_noremap('n', '<Leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- PLUGIN: LSP saga by Glepnir
 -- WARNING: Glepnir is inactive since > 8 months ago, so i have to disable this
