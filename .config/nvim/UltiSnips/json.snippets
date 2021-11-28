@@ -79,3 +79,40 @@ snippet eslint_typescript "Eslint for typescript"
   }
 }
 endsnippet
+
+snippet eslint_javascript "Javascript strict eslint"
+{
+  "root": true,
+  "plugins": [],
+  "parser": "",
+  "parserOptions": {},
+  "extends": ["eslint:recommended"],
+  "eslint-env": ["node"],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "warn",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "warn",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error"
+  }
+}
+endsnippet
