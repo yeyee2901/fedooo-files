@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/distant.nvim",
     url = "https://github.com/chipsenkbeil/distant.nvim"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",

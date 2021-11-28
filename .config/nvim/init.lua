@@ -22,6 +22,7 @@ require 'cmp-lsp-treesitter'
 require 'plugin-settings.formatter'
 require 'plugin-settings.telescope'
 require 'plugin-settings.markdown'
+require 'plugin-settings.nvim-dap'
 
 local transparent_line_number = true
 require('plugin-settings.color').neo_solarized(transparent_line_number)

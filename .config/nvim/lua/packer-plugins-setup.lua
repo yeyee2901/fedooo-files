@@ -3,115 +3,122 @@ local fn = vim.fn
 
 -- Ensure that packer is always installed in new machine
 -- Might differ on macOS & winOS
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local new_install = false
 
 if fn.empty(fn.glob(install_path)) > 0 then
-	print("[PACKER] Packer not yet installed")
-	print("[PACKER] Now installing packer in" .. install_path)
-	fn.system({ "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path })
-	execute("packadd packer.nvim")
-	new_install = true
+  print '[PACKER] Packer not yet installed'
+  print('[PACKER] Now installing packer in' .. install_path)
+  fn.system { 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path }
+  execute 'packadd packer.nvim'
+  new_install = true
 end
 
-require("packer").startup(function()
-	-- WARNING: Packer self management, DO NOT REMOVE
-	use({ "wbthomason/packer.nvim" })
+require('packer').startup(function()
+  -- WARNING: Packer self management, DO NOT REMOVE
+  use { 'wbthomason/packer.nvim' }
 
-	-- Start menu
-	use({ "mhinz/vim-startify" })
+  -- Start menu
+  use { 'mhinz/vim-startify' }
 
-	-- File tree preview
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
+  -- File tree preview
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
 
-	-- Solarized
-	use({ "ishan9299/nvim-solarized-lua" })
+  -- Solarized
+  use { 'ishan9299/nvim-solarized-lua' }
 
-	-- alternative
-	use({ "overcache/NeoSolarized" })
+  -- alternative
+  use { 'overcache/NeoSolarized' }
 
-	-- Status line
-	use({
-		"hoob3rt/lualine.nvim",
-		requires = {
-			"kyazdani42/nvim-tree.lua",
-		},
-	})
+  -- Status line
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-tree.lua',
+    },
+  }
 
-	-- Colorizer for color codes like this one -> #ff0000
-	use({ "norcalli/nvim-colorizer.lua" })
+  -- Colorizer for color codes like this one -> #ff0000
+  use { 'norcalli/nvim-colorizer.lua' }
 
-	-- LSP (Language Server)
-	use({ "neovim/nvim-lspconfig" })
-	use({ "ray-x/lsp_signature.nvim" })
-	use({ "glepnir/lspsaga.nvim" })
+  -- LSP (Language Server)
+  use { 'neovim/nvim-lspconfig' }
+  use { 'ray-x/lsp_signature.nvim' }
 
-	-- Completion engine
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"quangnguyen30192/cmp-nvim-ultisnips",
-			"onsails/lspkind-nvim", -- for labels & icons
-		},
-	})
+  -- Glepnir is inactive > 8 month ago, so
+  -- I have to disable this in case something goes wrong with 0.6 update
+  -- use { 'glepnir/lspsaga.nvim', lock = true}
 
-	-- Tree Sitter
-	use({ "nvim-treesitter/nvim-treesitter" })
-	use({ "nvim-treesitter/playground" })
-	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
+  -- Completion engine
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'quangnguyen30192/cmp-nvim-ultisnips',
+      'onsails/lspkind-nvim', -- for labels & icons
+    },
+  }
 
-	-- Telescopeee, behold the most overpowered meta plugin
-	use({ "nvim-lua/popup.nvim" })
-	use({ "nvim-lua/plenary.nvim" })
-	use({ "nvim-telescope/telescope.nvim" })
-	use({ "nvim-telescope/telescope-symbols.nvim" })
-	use({ "nvim-telescope/telescope-fzy-native.nvim" })
-	use({ "fhill2/telescope-ultisnips.nvim", requires = { "SirVer/ultisnips" } })
-	use({ "nvim-telescope/telescope-project.nvim" })
+  -- Tree Sitter
+  use { 'nvim-treesitter/nvim-treesitter' }
+  use { 'nvim-treesitter/playground' }
+  use { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
-	-- Git it gud
-	use({ "tpope/vim-fugitive" })
-	use({ "tpope/vim-rhubarb", requires = { "tpope/vim-fugitive" } })
+  -- Telescopeee, behold the most overpowered meta plugin
+  use { 'nvim-lua/popup.nvim' }
+  use { 'nvim-lua/plenary.nvim' }
+  use { 'nvim-telescope/telescope.nvim' }
+  use { 'nvim-telescope/telescope-symbols.nvim' }
+  use { 'nvim-telescope/telescope-fzy-native.nvim' }
+  use { 'fhill2/telescope-ultisnips.nvim', requires = { 'SirVer/ultisnips' } }
+  use { 'nvim-telescope/telescope-project.nvim' }
 
-	-- Snippets
-	use({ "SirVer/ultisnips" })
-	use({ "honza/vim-snippets" })
+  -- Git it gud
+  use { 'tpope/vim-fugitive' }
+  use { 'tpope/vim-rhubarb', requires = { 'tpope/vim-fugitive' } }
 
-	-- Bracket stuffs
-	use({ "jiangmiao/auto-pairs" })
-	use({ "tpope/vim-surround" })
+  -- Snippets
+  use { 'SirVer/ultisnips' }
+  use { 'honza/vim-snippets' }
 
-	-- Commentary
-	use({ "tpope/vim-commentary" })
+  -- Bracket stuffs
+  use { 'jiangmiao/auto-pairs' }
+  use { 'tpope/vim-surround' }
 
-	-- Visual Multi
-	use({ "mg979/vim-visual-multi" })
+  -- Commentary
+  use { 'tpope/vim-commentary' }
 
-	-- Markdown editing
-	use({ "iamcco/markdown-preview.nvim", run = ":call mkdp#util#install()" })
+  -- Visual Multi
+  use { 'mg979/vim-visual-multi' }
 
-	-- Note taking
-	use({ "vimwiki/vimwiki" })
+  -- Markdown editing
+  use { 'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
-	-- Distant.nvim
-	-- SSH editing like Visual Studio Code Remote
-	use({ "chipsenkbeil/distant.nvim" })
+  -- Note taking
+  use { 'vimwiki/vimwiki' }
 
-	-- Show indentation visual helper (to avoid confusion)
-	-- use {'lukas-reineke/indent-blankline.nvim'}
-	--
+  -- Distant.nvim
+  -- SSH editing like Visual Studio Code Remote
+  use { 'chipsenkbeil/distant.nvim' }
 
-	-- formatter for typescript / javascript because tsserver suck
-	use({ "mhartington/formatter.nvim" })
+  -- Show indentation visual helper (to avoid confusion)
+  -- use {'lukas-reineke/indent-blankline.nvim'}
+  --
+
+  -- formatter for typescript / javascript because
+  -- builtin formatter from LSPs suck
+  use { 'mhartington/formatter.nvim' }
+
+  -- debugger
+  use {'mfussenegger/nvim-dap'}
 end)
 
 if new_install then
-	vim.cmd("PackerInstall")
+  vim.cmd 'PackerInstall'
 end

@@ -86,7 +86,7 @@ cmp.setup {
 
   -- EXPERIMENTAL:
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false,
   },
 }
@@ -94,11 +94,28 @@ cmp.setup {
 -- LSP START
 -- If you want to install & activate the LSP, go to:
 --      https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+
+--   error_sign = '',
+--   warn_sign = '',
+--   hint_sign = '',
+--   infor_sign = '',
+
+vim.fn.sign_define('LspDiagnosticsSignError', { text = '', numhl = 'Error', linehl = 'Error' })
+vim.fn.sign_define('LspDiagnosticsSignWarning', { text = '', numhl = 'Todo', texthl = 'Todo' })
+vim.fn.sign_define('LspDiagnosticsSignHint', { text = '', numhl = 'Todo', texthl = 'Todo' })
+vim.fn.sign_define('LspDiagnosticsSignInformation', { text = '', numhl = 'Todo', texthl = 'Todo' })
+
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = true,
+  signs = true,
+  underline = true,
+})
+
 local lspconfig = require 'lspconfig'
 local util = require('lspconfig').util
 
 local custom_on_attach = function(client, bufnr)
-  -- Better UI
+  -- Better function signature hinting
   require('lsp_signature').on_attach {
     bind = true, -- Mandatory for config
     doc_lines = 5,
@@ -106,7 +123,7 @@ local custom_on_attach = function(client, bufnr)
     hint_enable = true,
     hint_prefix = '<> ',
     hint_scheme = 'String',
-    use_lspsaga = true,
+
     hi_parameter = 'Search',
     max_height = 12,
     max_width = 120,
@@ -117,6 +134,10 @@ local custom_on_attach = function(client, bufnr)
     -- The signature floating_window is reaaaallyy big, and i have to
     -- disable it so I can read the completion pop up menu
     floating_window = false,
+
+    -- WARNING: Glepnir is inactive for > 8 months, so there won't be any
+    -- bug fixes
+    use_lspsaga = false,
   }
 
   -- autoformat on save
@@ -130,21 +151,24 @@ local custom_on_attach = function(client, bufnr)
   end
 end
 
--- LSPSaga
-local lsp_saga = require 'lspsaga'
-lsp_saga.init_lsp_saga {
-  use_saga_diagnostic_sign = true,
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-  dianostic_header_icon = '[ERROR]  ',
-  max_preview_lines = 10, -- preview lines for provider functions.
-  code_action_prompt = {
-    enable = false,
-  },
-  border_style = 'round',
-}
+-- LSPSaga by Glepnir
+-- WARNING: Glepnir is inactive for > 8 months, so there won't be any
+-- bug fixes! Use at your own risk!
+
+-- local lsp_saga = require 'lspsaga'
+-- lsp_saga.init_lsp_saga {
+--   use_saga_diagnostic_sign = true,
+--   error_sign = '',
+--   warn_sign = '',
+--   hint_sign = '',
+--   infor_sign = '',
+--   dianostic_header_icon = '[ERROR]  ',
+--   max_preview_lines = 10, -- preview lines for provider functions.
+--   code_action_prompt = {
+--     enable = false,
+--   },
+--   border_style = 'round',
+-- }
 
 -- update LSP capabilities for nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -186,20 +210,14 @@ lspconfig.cmake.setup {
   on_attach = custom_on_attach,
 }
 
--- lspconfig.html.setup {
---   on_attach = custom_on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.cssls.setup {
---   on_attach = custom_on_attach,
---   capabilities = capabilities,
--- }
-
-lspconfig.emmet_ls.setup{
-  filetypes = {'html' , 'css'},
+lspconfig.html.setup {
   on_attach = custom_on_attach,
-  capabilities = capabilties
+  capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = custom_on_attach,
+  capabilities = capabilities,
 }
 
 lspconfig.tsserver.setup {
@@ -284,6 +302,7 @@ require('nvim-treesitter.configs').setup {
     'toml',
     'json',
     'latex',
+    'comment',
   },
 
   highlight = {
