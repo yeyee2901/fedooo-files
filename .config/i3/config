@@ -18,6 +18,7 @@ bar {
     mode hide
     hidden_state hide
     modifier none
+    tray_output none
 }
 
 # Disable title bar
