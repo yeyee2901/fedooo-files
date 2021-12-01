@@ -23,6 +23,7 @@ require 'plugin-settings.formatter'
 require 'plugin-settings.telescope'
 require 'plugin-settings.markdown'
 require 'plugin-settings.nvim-dap'
+vim.cmd 'source $HOME/.config/nvim/lua/plugin-settings/vimwiki.vim'
 
 local transparent_line_number = true
 require('plugin-settings.color').neo_solarized(transparent_line_number)
