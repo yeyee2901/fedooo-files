@@ -212,7 +212,8 @@ _noremap('n', '<Leader>dr', '<cmd>lua require("dap").repl.open({}, "vsplit")<CR>
 
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
-_noremap('n', '<Leader>tu', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
+_noremap('n', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
+_noremap('i', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
