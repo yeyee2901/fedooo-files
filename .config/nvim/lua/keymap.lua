@@ -62,8 +62,13 @@ _noremap('n', '<Tab>q', '<cmd>tabclose<CR>')
 _noremap('n', '<Tab>l', '<cmd>tabnext<CR>')
 _noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 
+-- Quickfix list -----------------------------------------------------------------
+_noremap('n', '<C-Space><C-j>', '<cmd>cnext<CR>')
+_noremap('n', '<C-Space><C-k>', '<cmd>cprevious<CR>')
+_noremap('n', '<C-Space><C-o>', '<cmd>copen<CR>')
+_noremap('n', '<C-Space><C-q>', '<cmd>cclose<CR>')
+
 -- Plugin specific keymaps -------------------------------------------------------
--- Plugins are prefixed with <Leader> (space key)
 
 -- PLUGIN: Nvim-tree
 _noremap('n', '<Leader>n', '<cmd>NvimTreeToggle<CR>')
@@ -79,22 +84,6 @@ _noremap('n', '<Leader>K', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 -- Diagnostic
 _noremap('n', '<Leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 _noremap('n', '<Leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-
--- PLUGIN: LSP saga by Glepnir
--- WARNING: Glepnir is inactive since > 8 months ago, so i have to disable this
--- in case something went wrong during the 0.6 update migration. If it's still sane,
--- then I will keep it as is.
-
--- _noremap("n", "<Leader>ft", '<cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>')
--- _noremap("t", "<ESC><ESC>", '<cmd>lua require("lspsaga.floaterm").close_float_terminal()<CR>')
--- _noremap("n", "<C-u>", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>')
--- _noremap("n", "<C-d>", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>')
--- _noremap("n", "<Leader>lr", '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>')
--- _noremap("n", "<Leader>ld", '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>')
--- _noremap("n", "<Leader>la", '<cmd>lua require("lspsaga.codeaction").range_code_action()<CR>')
--- _noremap("n", "<Leader>j", '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_next()<CR>')
--- _noremap("n", "<Leader>k", '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>')
--- _noremap("n", "<Leader>rn", '<cmd>lua require("lspsaga.rename").rename()<CR>')
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
 _noremap('n', '<Leader>gs', '<cmd>G<CR>')
