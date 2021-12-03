@@ -28,5 +28,3 @@ vim.cmd 'source $HOME/.config/nvim/lua/plugin-settings/vimwiki.vim'
 local transparent_line_number = true
 require('plugin-settings.color').neo_solarized(transparent_line_number)
 -- require('plugin-settings.color').solarized()
-
--- require('plugin-settings.indent-blankline')

@@ -104,19 +104,15 @@ require('packer').startup(function()
   use { 'vimwiki/vimwiki' }
 
   -- Distant.nvim
-  -- SSH editing like Visual Studio Code Remote
+  -- remote development like Visual Studio Code Remote
   use { 'chipsenkbeil/distant.nvim' }
 
-  -- Show indentation visual helper (to avoid confusion)
-  -- use {'lukas-reineke/indent-blankline.nvim'}
-  --
-
-  -- formatter for typescript / javascript because
-  -- builtin formatter from LSPs suck
+  -- formatter
+  -- builtin formatter from LSPs is not so good
   use { 'mhartington/formatter.nvim' }
 
   -- debugger
-  use {'mfussenegger/nvim-dap'}
+  use { 'mfussenegger/nvim-dap' }
 end)
 
 if new_install then
