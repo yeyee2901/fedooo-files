@@ -83,8 +83,13 @@ _noremap('n', '<Leader>K', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 _noremap('n', '<Leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 
 -- DIAGNOSTIC:
-_noremap('n', '<Leader>j', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-_noremap('n', '<Leader>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+if vim.version().minor == 5 then
+  _noremap('n', '<Leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+  _noremap('n', '<Leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+elseif vim.version().minor == 6 then
+  _noremap('n', '<Leader>j', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+  _noremap('n', '<Leader>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+end
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
 _noremap('n', '<Leader>gs', '<cmd>G<CR>')
@@ -201,9 +206,10 @@ _noremap('n', '<Leader>dk', '<cmd>lua require("plugin-settings.nvim-dap").scopes
 _noremap('n', '<Leader>dr', '<cmd>lua require("dap").repl.open({}, "vsplit")<CR>')
 
 -- SOME HELPER FUNCTIONALITY
--- open neovim config
 _noremap('n', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 _noremap('i', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
+_noremap('n', '<Leader>th', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_help()<CR>')
+
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
