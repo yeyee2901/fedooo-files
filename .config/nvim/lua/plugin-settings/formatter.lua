@@ -15,7 +15,7 @@ local clang_format = function()
   return {
     exe = 'clang-format',
     stdin = true,
-    args = { vim.api.nvim_buf_get_name(0), '-a', '-a' }, 
+    args = { vim.api.nvim_buf_get_name(0)}, 
   }
 end
 
@@ -24,7 +24,7 @@ local autopep = function()
   return {
     exe = 'autopep8',
     stdin = true,
-    args = { vim.api.nvim_buf_get_name(0) },
+    args = { vim.api.nvim_buf_get_name(0), '-a', '-a'  },
   }
 end
 
