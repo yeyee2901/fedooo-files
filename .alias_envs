@@ -20,6 +20,7 @@ alias tka='t kill-server'
 # (N)VIM aliases
 alias v="vim"
 alias nv="nvim"
+alias nv6="nvim6"
 
 # exa
 alias l='exa -g --icons'
