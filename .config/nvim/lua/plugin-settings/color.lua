@@ -1,8 +1,5 @@
 local M = {}
 
--- Dashboard
-require 'plugin-settings.startify'
-
 -- Lualine
 local lualine = require 'plugin-settings.lualine'
 
@@ -59,6 +56,9 @@ M.neo_solarized = function(transparent_line_number)
   vim.cmd 'highlight CmpItemMenuDefault guifg=#839496 guibg=#cb4b16'
 
   vim.cmd 'highlight Normal guibg=none'
+
+  -- cursorline color
+  vim.cmd 'highlight CursorLine guibg=#232345'
 
   if transparent_line_number then
     vim.cmd 'highlight LineNr guibg=none'

@@ -120,19 +120,23 @@ elseif vim.version().minor == 6 then
     'DiagnosticSignError',
     { text = '', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError', numhl = 'DiagnosticSignError' }
   )
+
   vim.fn.sign_define(
     'DiagnosticSignWarn',
     { text = '', texthl = 'DiagnosticSignWarn', numhl = 'DiagnosticSignWarn' }
   )
+
   vim.fn.sign_define(
     'DiagnosticSignInfo',
     { text = '', texthl = 'DiagnosticSignInfo', numhl = 'DiagnosticSignInfo' }
   )
+
   vim.fn.sign_define(
     'DiagnosticSignHint',
     { text = '', texthl = 'DiagnosticSignHint', numhl = 'DiagnosticSignHint' }
   )
 
+  -- New setup call for 0.6
   vim.diagnostic.config {
     signs = true,
     virtual_text = {

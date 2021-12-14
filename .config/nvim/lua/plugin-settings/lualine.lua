@@ -51,7 +51,7 @@ M.setup_lualine = function(theme)
 				{ "filename", path = 1 },
 				{
 					"diagnostics",
-					sources = { "nvim_lsp" },
+					sources = { "nvim_diagnostic" },
 					symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					color_error = "#ff0000",
 					color_warn = "#dff705",
@@ -93,12 +93,6 @@ M.setup_lualine = function(theme)
 			lualine_y = {},
 			lualine_z = {},
 		},
-
-		-- tabline = {
-		--   lualine_a = {},
-		--   lualine_b = {},
-		--   lualine_c = {},
-		-- },
 	})
 end
 
