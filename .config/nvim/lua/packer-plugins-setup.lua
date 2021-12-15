@@ -27,9 +27,6 @@ require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
 
-  -- Solarized
-  use { 'ishan9299/nvim-solarized-lua' }
-
   -- alternative
   use { 'overcache/NeoSolarized' }
 
@@ -47,10 +44,6 @@ require('packer').startup(function()
   -- LSP (Language Server)
   use { 'neovim/nvim-lspconfig' }
   use { 'ray-x/lsp_signature.nvim' }
-
-  -- Glepnir is inactive > 8 month ago, so
-  -- I have to disable this in case something goes wrong with 0.6 update
-  -- use { 'glepnir/lspsaga.nvim', lock = true}
 
   -- Completion engine
   use {
@@ -81,7 +74,6 @@ require('packer').startup(function()
 
   -- Git it gud
   use { 'tpope/vim-fugitive' }
-  use { 'tpope/vim-rhubarb', requires = { 'tpope/vim-fugitive' } }
 
   -- Snippets
   use { 'SirVer/ultisnips' }
@@ -96,9 +88,6 @@ require('packer').startup(function()
 
   -- Visual Multi
   use { 'mg979/vim-visual-multi' }
-
-  -- Markdown editing
-  use { 'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
   -- Note taking
   use { 'vimwiki/vimwiki' }
