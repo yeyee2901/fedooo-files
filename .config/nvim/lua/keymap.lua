@@ -57,10 +57,11 @@ _noremap('n', 'sh', '<C-w>s')
 _noremap('n', 'sq', '<C-w>q')
 
 -- Tab keymappings ---------------------------------------------------------------
-_noremap('n', '<Tab>n', '<cmd>tabnew<CR>')
-_noremap('n', '<Tab>q', '<cmd>tabclose<CR>')
-_noremap('n', '<Tab>l', '<cmd>tabnext<CR>')
-_noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
+-- Enable this? then source tabline.vim
+-- _noremap('n', '<Tab>n', '<cmd>tabnew<CR>')
+-- _noremap('n', '<Tab>q', '<cmd>tabclose<CR>')
+-- _noremap('n', '<Tab>l', '<cmd>tabnext<CR>')
+-- _noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 
 -- Quickfix list -----------------------------------------------------------------
 _noremap('n', '<C-Space><C-j>', '<cmd>cnext<CR>')
@@ -69,6 +70,26 @@ _noremap('n', '<C-Space><C-o>', '<cmd>copen<CR>')
 _noremap('n', '<C-Space><C-q>', '<cmd>cclose<CR>')
 
 -- Plugin specific keymaps -------------------------------------------------------
+
+-- PLUGIN: barbar.nvim (tabline plugin)
+_noremap('n', '<Tab>l', '<cmd>BufferNext<CR>')
+_noremap('n', '<Tab>h', '<cmd>BufferPrevious<CR>')
+_noremap('n', '<Tab>1', '<cmd>BufferGoto 1<CR>')
+_noremap('n', '<Tab>2', '<cmd>BufferGoto 2<CR>')
+_noremap('n', '<Tab>3', '<cmd>BufferGoto 3<CR>')
+_noremap('n', '<Tab>4', '<cmd>BufferGoto 4<CR>')
+_noremap('n', '<Tab>5', '<cmd>BufferGoto 5<CR>')
+_noremap('n', '<Tab>6', '<cmd>BufferGoto 6<CR>')
+_noremap('n', '<Tab>7', '<cmd>BufferGoto 7<CR>')
+_noremap('n', '<Tab>8', '<cmd>BufferGoto 8<CR>')
+_noremap('n', '<Tab>9', '<cmd>BufferGoto 9<CR>')
+_noremap('n', '<Tab>0', '<cmd>BufferLast<CR>')
+_noremap('n', '<Tab>g', '<cmd>BufferPick<CR>')
+
+_noremap('n', '<Tab>H', '<cmd>BufferMovePrevious<CR>')
+_noremap('n', '<Tab>L', '<cmd>BufferMoveNext<CR>')
+
+_noremap('n', '<Tab>q', '<cmd>BufferClose<CR>')
 
 -- PLUGIN: Nvim-tree
 _noremap('n', '<Leader>n', '<cmd>NvimTreeToggle<CR>')
@@ -209,7 +230,6 @@ _noremap('n', '<Leader>dr', '<cmd>lua require("dap").repl.open({}, "vsplit")<CR>
 _noremap('n', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 _noremap('i', '<C-s>', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 _noremap('n', '<Leader>th', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_help()<CR>')
-
 
 -- MY TELESCOPE PICKERS
 _noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')

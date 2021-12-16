@@ -16,7 +16,8 @@ require 'keymap'
 vim.cmd [[source ~/.config/nvim/autocmd.vim]]
 
 -- PLUGIN SETTINGS
-vim.cmd [[source ~/.config/nvim/lua/plugin-settings/tabline.vim]]
+-- vim.cmd [[source ~/.config/nvim/lua/plugin-settings/tabline.vim]]
+require 'plugin-settings.barbar'
 require 'plugin-settings.nvim-tree'
 require 'cmp-lsp-treesitter'
 require 'plugin-settings.formatter'

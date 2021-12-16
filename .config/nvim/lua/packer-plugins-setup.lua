@@ -27,6 +27,11 @@ require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
 
+  use {
+    'romgrk/barbar.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
+
   -- alternative
   use { 'overcache/NeoSolarized' }
 
