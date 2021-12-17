@@ -33,7 +33,8 @@ require('packer').startup(function()
   }
 
   -- alternative
-  use { 'overcache/NeoSolarized' }
+  -- use { 'overcache/NeoSolarized' }
+  use { 'ishan9299/nvim-solarized-lua' }
 
   -- Status line
   use {
@@ -107,6 +108,9 @@ require('packer').startup(function()
 
   -- debugger
   use { 'mfussenegger/nvim-dap' }
+
+  -- startup time
+  use { 'dstein64/vim-startuptime' }
 end)
 
 if new_install then

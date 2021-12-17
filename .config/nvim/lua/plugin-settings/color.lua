@@ -3,47 +3,25 @@ local M = {}
 -- Lualine
 local lualine = require 'plugin-settings.lualine'
 
--- For alternative
-M.neo_solarized = function(transparent_line_number)
+M.solarized_lua = function()
   local opts = {
-    neosolarized_bold = 0,
-    neosolarized_underline = 0,
-    neosolarized_italic = 0,
-    neosolarized_vertSplitBgTrans = 1,
-    neosolarized_visibility = 'high',
-    neosolarized_termBoldAsBright = 1,
+    solarized_termtrans = 1,
+    solarized_italics = 1,
+    solarized_visibility = 'normal',
+    solarized_diffmode = 'normal',
   }
 
   for option, value in ipairs(opts) do
-    vim.g[option] = value
+    vim.g[opts] = value
   end
-
-  vim.opt.background = 'dark'
 
   lualine.setup_lualine 'solarized_dark'
-  vim.cmd 'colorscheme NeoSolarized'
+  vim.cmd 'colorscheme solarized-high'
 
-  -- so my eyes don't hurt!
-  -- The symbol color
-  vim.cmd 'highlight CmpItemKindDefault guifg=#839496 guibg=#dc322f'
-  vim.cmd 'highlight CmpItemMenuDefault guifg=#839496 guibg=#cb4b16'
-
+  -- custom color
   vim.cmd 'highlight Normal guibg=none'
-
-  -- cursorline color
   vim.cmd 'highlight CursorLine guibg=#232345'
-
-  if transparent_line_number then
-    vim.cmd 'highlight LineNr guibg=none'
-    -- vim.cmd 'highlight TabLine gui=none guibg=none'
-    -- vim.cmd 'highlight TabLineSel gui=none guibg=none guifg=#dc322f'
-  else
-    vim.cmd 'highlight TabLine gui=none guibg=#073642'
-    -- vim.cmd 'highlight TabLineFill gui=none guibg=#073642'
-    -- vim.cmd 'highlight TabLineSel gui=none guibg=#073642 guifg=#dc322f'
-  end
-
-  vim.cmd 'highlight! link SignColumn LineNr'
+  vim.cmd 'highlight LineNr guibg=none'
 end
 
 -- Vim colorizer
