@@ -1,9 +1,7 @@
-local M = {}
-
 -- Lualine
 local lualine = require 'plugin-settings.lualine'
 
-M.solarized_lua = function()
+local my_theme = function()
   local opts = {
     solarized_termtrans = 1,
     solarized_italics = 1,
@@ -22,9 +20,8 @@ M.solarized_lua = function()
   vim.cmd 'highlight Normal guibg=none'
   vim.cmd 'highlight CursorLine guibg=#232345'
   vim.cmd 'highlight LineNr guibg=none'
+  vim.cmd 'highlight TSConstructor guifg=#dc322f'
+  vim.cmd 'highlight Delimiter guifg=#dc322f'
 end
 
--- Vim colorizer
-require('colorizer').setup()
-
-return M
+my_theme()

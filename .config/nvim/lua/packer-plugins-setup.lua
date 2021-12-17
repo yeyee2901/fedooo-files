@@ -21,69 +21,50 @@ require('packer').startup(function()
   -- Start menu
   use { 'mhinz/vim-startify' }
 
-  -- File tree preview
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
-
-  use {
-    'romgrk/barbar.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
-
-  -- alternative
-  -- use { 'overcache/NeoSolarized' }
+  -- UI Stuffs
+  use { 'kyazdani42/nvim-web-devicons' }
+  use { 'hoob3rt/lualine.nvim' }
+  use { 'romgrk/barbar.nvim' }
   use { 'ishan9299/nvim-solarized-lua' }
-
-  -- Status line
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {
-      'kyazdani42/nvim-tree.lua',
-    },
-  }
 
   -- Colorizer for color codes like this one -> #ff0000
   use { 'norcalli/nvim-colorizer.lua' }
+
+  -- File tree explorer
+  use { 'kyazdani42/nvim-tree.lua' }
 
   -- LSP (Language Server)
   use { 'neovim/nvim-lspconfig' }
   use { 'ray-x/lsp_signature.nvim' }
 
   -- Completion engine
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'quangnguyen30192/cmp-nvim-ultisnips',
-      'onsails/lspkind-nvim', -- for labels & icons
-    },
-  }
+  use { 'SirVer/ultisnips' }
+  use { 'honza/vim-snippets' }
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-nvim-lua' }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+  use { 'onsails/lspkind-nvim' } -- for labels & icons
 
   -- Tree Sitter
   use { 'nvim-treesitter/nvim-treesitter' }
   use { 'nvim-treesitter/playground' }
   use { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
-  -- Telescopeee, behold the most overpowered meta plugin
+  -- Telescopeee, behold the most overpowered plugin of the year
   use { 'nvim-lua/popup.nvim' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-symbols.nvim' }
   use { 'nvim-telescope/telescope-fzy-native.nvim' }
-  use { 'fhill2/telescope-ultisnips.nvim', requires = { 'SirVer/ultisnips' } }
+  use { 'fhill2/telescope-ultisnips.nvim' }
   use { 'nvim-telescope/telescope-project.nvim' }
 
+  -- UTILS
   -- Git it gud
   use { 'tpope/vim-fugitive' }
-
-  -- Snippets
-  use { 'SirVer/ultisnips' }
-  use { 'honza/vim-snippets' }
 
   -- Bracket stuffs
   use { 'jiangmiao/auto-pairs' }

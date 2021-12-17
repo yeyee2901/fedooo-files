@@ -16,7 +16,6 @@ require 'keymap'
 vim.cmd [[source ~/.config/nvim/autocmd.vim]]
 
 -- PLUGIN SETTINGS
--- vim.cmd [[source ~/.config/nvim/lua/plugin-settings/tabline.vim]]
 require 'plugin-settings.barbar'
 require 'plugin-settings.nvim-tree'
 require 'cmp-lsp-treesitter'
@@ -24,7 +23,8 @@ require 'plugin-settings.formatter'
 require 'plugin-settings.telescope'
 require 'plugin-settings.nvim-dap'
 require 'plugin-settings.startify'
+require 'colorizer'.setup()
 vim.cmd 'source $HOME/.config/nvim/lua/plugin-settings/vimwiki.vim'
 
 -- THEME
-require('plugin-settings.color').solarized_lua()
+require 'plugin-settings.theme'
