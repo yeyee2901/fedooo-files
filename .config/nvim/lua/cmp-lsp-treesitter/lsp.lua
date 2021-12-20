@@ -82,7 +82,13 @@ local custom_on_attach = function(client, bufnr)
 
   -- autoformat on save
   -- disable for tsserver, will use prettier instead
-  if client.name == 'tsserver' or client.name == 'ccls' or client.name == 'html' or client.name == 'cssls' then
+  if
+    client.name == 'tsserver'
+    or client.name == 'ccls'
+    or client.name == 'html'
+    or client.name == 'cssls'
+    or client.name == 'rust_analyzer'
+  then
     client.resolved_capabilities.document_formatting = false
   end
 

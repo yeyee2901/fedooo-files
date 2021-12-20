@@ -36,6 +36,14 @@ local stylua = function()
   }
 end
 
+local rustfmt = function()
+  return {
+    exe = 'rustfmt',
+    stdin = false,
+    args = { vim.api.nvim_buf_get_name(0) },
+  }
+end
+
 require('formatter').setup {
   logging = true,
   filetype = {
@@ -52,6 +60,8 @@ require('formatter').setup {
     cpp = { clang_format },
 
     python = { autopep },
+
+    rust = { rustfmt },
 
     lua = { stylua },
   },
