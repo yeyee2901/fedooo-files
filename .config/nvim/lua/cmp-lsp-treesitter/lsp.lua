@@ -81,23 +81,25 @@ local custom_on_attach = function(client, bufnr)
   }
 
   -- autoformat on save
-  -- disable for tsserver, will use prettier instead
+  -- disable for some pre-configured formatter
   if
-    client.name == 'tsserver'
-    or client.name == 'ccls'
-    or client.name == 'html'
-    or client.name == 'cssls'
-    or client.name == 'rust_analyzer'
+    client.name == 'tsserver'   -- use prettier instead
+    or client.name == 'html'    -- use prettier instead
+    or client.name == 'cssls'   -- use prettier instead
+    or client.name == 'ccls'    -- use clang-format instead
+    or client.name == 'rust_analyzer' -- use custom styled rustfmt instead
   then
     client.resolved_capabilities.document_formatting = false
   end
 
+  -- if LSP has `document_formatting` method support, then create
+  -- autocommands for formatting on save
   if client.resolved_capabilities.document_formatting then
     vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
   end
 end
 
--- update LSP capabilities for nvim-cmp
+-- update LSP capabilities to include nvim-cmp (completion)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true

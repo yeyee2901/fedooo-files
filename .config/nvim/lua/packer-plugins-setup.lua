@@ -65,6 +65,7 @@ require('packer').startup(function()
   -- UTILS
   -- Git it gud
   use { 'tpope/vim-fugitive' }
+  use { 'lewis6991/gitsigns.nvim' }
 
   -- Bracket stuffs
   use { 'jiangmiao/auto-pairs' }

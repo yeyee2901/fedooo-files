@@ -23,6 +23,7 @@ require 'plugin-settings.formatter'
 require 'plugin-settings.telescope'
 require 'plugin-settings.nvim-dap'
 require 'plugin-settings.startify'
+require 'plugin-settings.gitsigns'
 require 'colorizer'.setup()
 vim.cmd 'source $HOME/.config/nvim/lua/plugin-settings/vimwiki.vim'
 
