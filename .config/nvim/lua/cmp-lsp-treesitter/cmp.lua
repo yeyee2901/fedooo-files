@@ -18,6 +18,7 @@ end
 
 -- SECTION: Nvim-Cmp Autocomplete engine
 local cmp = require 'cmp'
+local icons = require('lspkind').presets.default
 
 vim.o.completeopt = 'menuone,noselect'
 
@@ -48,26 +49,33 @@ cmp.setup {
     min_height = 1,
   },
 
-  -- LSP context icon like VSCode
-  -- INSTALL:
-  -- onsails/lspkind-nvim
-  --
+  -- short format
   formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = require('lspkind').presets.default[vim_item.kind]
-
-      -- Label the source
-      vim_item.menu = ({
-        buffer = '[Buffer]',
-        nvim_lsp = '[LSP]',
-        nvim_lua = '[Lua]',
-        path = '[Path]',
-        ultisnips = '[Snippet]',
-      })[entry.source.name]
-
+    fields = { 'kind', 'abbr' },
+    format = function(_, vim_item)
+      vim_item.kind = icons[vim_item.kind] or ''
       return vim_item
     end,
   },
+
+  -- long format
+  -- formatting = {
+  --   fields = { 'abbr', 'kind' },
+  --   format = function(entry, vim_item)
+  --     vim_item.kind = string.format('%s [%s]', icons[vim_item.kind], vim_item.kind)
+
+  --     -- Label the source
+  --     vim_item.menu = ({
+  --       buffer = '[Buffer]',
+  --       nvim_lsp = '[LSP]',
+  --       nvim_lua = '[Lua]',
+  --       path = '[Path]',
+  --       ultisnips = '[Snippet]',
+  --     })[entry.source.name]
+
+  --     return vim_item
+  --   end,
+  -- },
 
   sources = {
     -- { name = 'buffer' },
@@ -91,3 +99,23 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+-- Highlighting
+vim.cmd [[
+" gray
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+" blue
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+" light blue
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+" pink
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+" front
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+]]

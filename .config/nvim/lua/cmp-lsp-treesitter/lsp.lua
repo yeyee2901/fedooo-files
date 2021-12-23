@@ -83,10 +83,10 @@ local custom_on_attach = function(client, bufnr)
   -- autoformat on save
   -- disable for some pre-configured formatter
   if
-    client.name == 'tsserver'   -- use prettier instead
-    or client.name == 'html'    -- use prettier instead
-    or client.name == 'cssls'   -- use prettier instead
-    or client.name == 'ccls'    -- use clang-format instead
+    client.name == 'tsserver' -- use prettier instead
+    or client.name == 'html' -- use prettier instead
+    or client.name == 'cssls' -- use prettier instead
+    or client.name == 'ccls' -- use clang-format instead
     or client.name == 'rust_analyzer' -- use custom styled rustfmt instead
   then
     client.resolved_capabilities.document_formatting = false
@@ -207,7 +207,41 @@ lspconfig.eslint.setup {
   },
 }
 
+-- npm i -g intelephense
 lspconfig.intelephense.setup {
   on_attach = custom_on_attach,
   capabilities = capabilities,
+}
+
+-- Sumneko Lua Language Server
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+
+lspconfig.sumneko_lua.setup {
+  on_attach = custom_on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 }
