@@ -54,7 +54,7 @@ base3 = #fdf6e3
 monitor = ${env:MONITOR:}
 modules-left = i3
 modules-center = date
-modules-right = cpu memory wlan eth
+modules-right = cpu memory wlan eth powermenu
 
 width = 100%
 height = 27
@@ -65,7 +65,7 @@ font-0 = JetBrainsMonoMedium NF-Bold:size=10
 background = ${solarized.back}
 foreground = ${solarized.base3}
 
-line-size = 3
+line-size = 4
 
 module-margin-left = 1
 module-margin-right = 2
@@ -165,10 +165,39 @@ format-connected-prefix-foreground = ${solarized.yellow}
 format-connected-underline = ${solarized.yellow}
 label-connected = "%downspeed% %essid%"
 
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = ""
+label-open-foreground = ${solarized.red}
+label-close =  cancel
+label-close-foreground = ${solarized.base3}
+label-separator = |
+label-separator-foreground = ${solarized.cyan}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-pseudo-transparency = false
+pseudo-transparency = true
