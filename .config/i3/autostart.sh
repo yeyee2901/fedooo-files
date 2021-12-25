@@ -2,4 +2,4 @@
 
 $HOME/.config/polybar/launch.sh &
 nitrogen --restore &
-killall compton && compton &
+killall compton ; compton &
