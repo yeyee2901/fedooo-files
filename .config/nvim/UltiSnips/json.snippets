@@ -1,0 +1,204 @@
+snippet eslintrc_react "Base .eslintrc.json for React project"
+{
+  "root": true,
+  "plugins": ["react"],
+  "env": {
+      "browser": true,
+      "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "warn",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "error",
+    "no-unused-expressions": "warn",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error",
+
+    "react/display-name": 0,
+
+    /* Outdated! now React namespace doesn't need to be in scope */
+    "react/react-in-jsx-scope": "off",
+
+    /* Outdated! now we don't have to specify propTypes */
+    "react/prop-types": "off"
+  }
+}
+endsnippet
+
+snippet eslintrc_typescript "Eslint base config for typescript"
+{
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {},
+  "env": ["node"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "warn",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "warn",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error"
+  }
+}
+endsnippet
+
+snippet eslint_javascript "Javascript strict eslint"
+{
+  "root": true,
+  "plugins": [],
+  "parser": "",
+  "parserOptions": {},
+  "extends": ["eslint:recommended"],
+  "eslint-env": ["node", "browser"],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "warn",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "warn",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error"
+  }
+}
+endsnippet
+
+snippet tsconfig "Base tsconfig.json"
+{
+  "compilerOptions": {
+    "target": "esnext",
+
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": false,
+
+    "outDir": "./build",
+    "rootDir": "./src",
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "strictFunctionTypes": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": true,
+
+    "skipLibCheck": true
+  },
+
+  "exclude": ["node_modules"]
+}
+endsnippet
+
+snippet eslint_nextjs "Template .eslintrc for NextJS project"
+{
+  "root": true,
+  "plugins": ["react"],
+  "env": {
+      "browser": true,
+      "node": true
+  },
+  
+  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "warn",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "error",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error",
+
+    "react/display-name": 0,
+
+    /* Outdated! now React namespace doesn't need to be in scope */
+    "react/react-in-jsx-scope": "off",
+
+    /* Outdated! now we don't have to specify propTypes */
+    "react/prop-types": "off"
+  }
+}
+endsnippet

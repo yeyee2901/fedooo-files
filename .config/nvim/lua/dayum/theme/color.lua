@@ -1,4 +1,4 @@
-require('material').setup({
+require("material").setup({
 
 	contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
 	borders = true, -- Enable borders between verticaly split windows
@@ -10,29 +10,32 @@ require('material').setup({
 		keywords = false, -- Enable italic keywords
 		functions = false, -- Enable italic functions
 		strings = true, -- Enable italic strings
-		variables = false -- Enable italic variables
+		variables = false, -- Enable italic variables
 	},
 
 	contrast_windows = { -- Specify which windows get the contrasted (darker) background
 		"terminal", -- Darker terminal background
 		"packer", -- Darker packer background
-		"qf" -- Darker qf list background
+		"qf", -- Darker qf list background
 	},
 
 	text_contrast = {
 		lighter = false, -- Enable higher contrast text for lighter style
-		darker = false -- Enable higher contrast text for darker style
+		darker = false, -- Enable higher contrast text for darker style
 	},
 
 	disable = {
-		background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
-		term_colors = true, -- Prevent the theme from setting terminal colors
-		eob_lines = false -- Hide the end-of-buffer lines
+		background = true, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+		term_colors = false, -- Prevent the theme from setting terminal colors
+		eob_lines = false, -- Hide the end-of-buffer lines
 	},
 
-	custom_highlights = {} -- Overwrite highlights with your own
+	custom_highlights = {}, -- Overwrite highlights with your own
 })
 
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "oceanic"
 
-vim.cmd[[colorscheme material]]
+vim.cmd([[colorscheme material]])
+
+vim.cmd[[autocmd BufEnter * highlight TelescopeNormal guibg=none]]
+vim.cmd[[autocmd BufEnter * highlight Normal guibg=none]]
