@@ -27,10 +27,6 @@ local my_options = {
   splitright = true,
 }
 
--- For tmux, render italic fonts properly
-vim.cmd 'set t_ZH=[3m'
-vim.cmd 'set t_ZR=[23m'
-
 -- Allow Lua syntax in vimscripts ('l' as in lua)
 vim.g.vimsyn_embed = 'l'
 
@@ -39,5 +35,5 @@ vim.cmd 'syntax on'
 
 -- set all options
 for option, value in pairs(my_options) do
-  vim.o[option] = value
+  vim.opt[option] = value
 end

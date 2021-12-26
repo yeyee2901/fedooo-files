@@ -2,13 +2,13 @@
 require('basic-settings')
 
 -- SECTION: PLUGINS
--- require('dayum.my-plugins')
+require('dayum.plugins')
 
 -- SECTION: IDE experience
--- require('dayum.ide')
+require('dayum.ide')
 
 -- SECTION: KEYMAPS
--- require('dayum.keymaps')
+require('dayum.keymaps')
 
 -- SECTION: UI
--- require('dayum.theme')
+require('dayum.theme')
