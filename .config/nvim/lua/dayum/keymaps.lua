@@ -14,7 +14,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- SOURCE
-map("n", "<Leader>source", "<cmd>luafile %<CR>", opts)
+map("n", "<Leader><S-r>", ":w<CR><cmd>luafile %<CR>", silent)
+map("n", "<Leader><S-s>", ":w<CR><cmd>luafile %<CR><cmd>PackerSync<CR>", silent)
 
 -- WINDOW KEYMAPS
 map("n", "<C-h>", "<C-w>h", opts)
@@ -88,6 +89,9 @@ map("n", "<Leader>tgs", "<cmd>Telescope git_status<CR>", opts)
 map("n", "<Leader>tgf", "<cmd>Telescope git_files<CR>", opts)
 map("n", "<Leader>tgca", "<cmd>Telescope git_commits<CR>", opts)
 map("n", "<Leader>tgcb", "<cmd>Telescope git_bcommits<CR>", opts)
+
+-- Telescope extensions
+map("n", "<Leader>tu", "<cmd>Telescope ultisnips<CR>", opts)
 
 -- PLUGIN: Formatter
 map("n", "<Leader>ff", "<cmd>Format<CR>", opts)

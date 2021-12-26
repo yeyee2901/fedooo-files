@@ -41,6 +41,8 @@ require("packer").startup(function(use)
 
 	-- TELESCOPE
 	use({ "nvim-lua/plenary.nvim" })
+	use({ "fhill2/telescope-ultisnips.nvim" })
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		config = function()
