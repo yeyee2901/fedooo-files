@@ -22,33 +22,33 @@
 -- tomorrow
 -- wombat (like seoul256, but lighter)
 
-require'lualine'.setup {
+require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'nightfly',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {},
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'filetype', 'filename'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'filetype', 'filename' },
     lualine_c = {
-        -- diagnostic
+      -- diagnostic
     },
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {'location', 'branch'}
+    lualine_z = { 'location', 'branch' },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   tabline = {},
-  extensions = {}
+  extensions = {},
 }
