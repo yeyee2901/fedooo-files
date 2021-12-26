@@ -1,23 +1,6 @@
-/*
- ____     ___    _____   ___ 
-|  _ \   / _ \  |  ___| |_ _|
-| |_) | | | | | | |_     | | 
-|  _ <  | |_| | |  _|    | | 
-|_| \_\  \___/  |_|     |___|
-                             
-Config file for Fedora 35 i3
-by: yeyee2901
-14 November 2021
-
-*/
+/** Basic config file **/
 
 configuration {
-    modi: "window,run";
-    font: "mono 12";
-    show-icons: true;
-    terminal: "alacritty";
-    run-command: "{cmd}";
-    fullscreen: false;
+  show-icons:         true;
+  icon-theme:         "Papirus";
 }
-
-@import "solarized.rasi"
