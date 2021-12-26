@@ -74,7 +74,7 @@ module-margin-right = 2
 tray-position = right
 tray-padding = 2
 tray-reparent = true
-tray-background = ${solarized.violet}
+tray-background = ${solarized.magenta}
 tray-maxsize = 16
 
 cursor-click = pointer
@@ -109,13 +109,13 @@ label-mode-background = ${solarized.back}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${solarized.cyan}
+label-focused-background = ${solarized.magenta}
 label-focused-underline= ${solarized.orange}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -133,8 +133,8 @@ label-urgent-padding = 2
 type = internal/cpu
 interval = 2
 format-prefix = "CPU "
-format-prefix-foreground = ${solarized.magenta}
-format-underline = ${solarized.magenta}
+format-prefix-foreground = ${solarized.cyan}
+format-underline = ${solarized.cyan}
 label = %percentage:2%%
 
 
@@ -175,7 +175,7 @@ format-spacing = 1
 
 label-open = ""
 label-open-foreground = ${solarized.red}
-label-close =  cancel
+label-close = cancel
 label-close-foreground = ${solarized.base3}
 label-separator = |
 label-separator-foreground = ${solarized.cyan}
