@@ -21,7 +21,7 @@ require("material").setup({
 
 	text_contrast = {
 		lighter = false, -- Enable higher contrast text for lighter style
-		darker = false, -- Enable higher contrast text for darker style
+		darker = true, -- Enable higher contrast text for darker style
 	},
 
 	disable = {
