@@ -63,6 +63,12 @@ require("packer").startup(function(use)
 
 	-- GIT SUPERPOWER
 	use({ "tpope/vim-fugitive" })
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("dayum.plugins.gitsigns")
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
