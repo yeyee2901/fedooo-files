@@ -30,6 +30,7 @@ wired = "eno1"
 wlan = "wlo1"
 
 [solarized]
+black = #121222
 back = #002b36
 red = #dc322f
 green = #859900
@@ -62,7 +63,7 @@ fixed-center = false
 padding-right = 1
 font-0 = JetBrainsMonoMedium NF-Bold:size=10
 
-background = ${solarized.back}
+background = ${solarized.black}
 foreground = ${solarized.base3}
 
 line-size = 4
