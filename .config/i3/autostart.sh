@@ -2,4 +2,5 @@
 
 $HOME/.config/polybar/launch.sh &
 nitrogen --restore &
-killall compton ; compton &
+flameshot &
+killall picom ; picom --config $HOME/.config/picom.conf &
