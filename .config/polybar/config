@@ -29,7 +29,7 @@ margin-bottom = 8
 wired = "eno1"
 wlan = "wlo1"
 
-[solarized]
+[color]
 black = #121222
 back = #002b36
 red = #dc322f
@@ -39,6 +39,8 @@ blue = #268bd2
 magenta = #d33682
 cyan = #2aa198
 orange = #cb4b16
+purple = #ff36ff
+dpurple = #9936dd
 
 base00 = #657b83
 base01 = #586e75
@@ -52,19 +54,25 @@ base3 = #fdf6e3
 
 ; MAIN STATUS BAR, TOP ONLY
 [bar/main]
+
+; format: <font name>-<variant>:size=<num>;<offset y>
+font-0 = JetBrainsMonoMedium NF-Bold:size=10
+font-1 = JetBrainsMonoMedium NF-Bold:size=20;3
+font-2 = JetBrainsMonoMedium NF-Bold:size=20;5
+
 monitor = ${env:MONITOR:}
-modules-left = i3
-modules-center = date
-modules-right = cpu memory wlan eth powermenu
+
+modules-left = fedora-logo i3
+modules-center = xwindow
+modules-right = date cpu memory wlan eth powermenu
 
 width = 100%
 height = 27
 fixed-center = false
 padding-right = 1
-font-0 = JetBrainsMonoMedium NF-Bold:size=10
 
-background = ${solarized.black}
-foreground = ${solarized.base3}
+background = ${color.black}
+foreground = ${color.base3}
 
 line-size = 4
 
@@ -74,7 +82,7 @@ module-margin-right = 2
 tray-position = right
 tray-padding = 2
 tray-reparent = true
-tray-background = ${solarized.magenta}
+tray-background = ${color.dpurple}
 tray-maxsize = 16
 
 cursor-click = pointer
@@ -85,14 +93,18 @@ cursor-click = pointer
 type = internal/date
 interval = 5
 date =
-date-alt = "%A, %d %B %Y"
-time = %H:%M
+date-alt = " %A, %d %B %Y"
+time = "%H:%M"
 time-alt = 
-format-prefix = 
-format-prefix-foreground = ${solarized.base3}
-format-underline = 
+format-prefix = "﨟"
+format-prefix-font = 2
+format-prefix-foreground = ${color.orange}
+format-underline = ${color.orange}
 label = %date% %time%
 
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
 
 [module/i3]
 type = internal/i3
@@ -105,12 +117,12 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${solarized.back}
+label-mode-background = ${color.back}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${solarized.magenta}
-label-focused-underline= ${solarized.orange}
+label-focused-background = ${color.magenta}
+label-focused-underline= ${color.orange}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -125,35 +137,37 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${solarized.red}
+label-urgent-background = ${color.red}
 label-urgent-padding = 2
 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${solarized.cyan}
-format-underline = ${solarized.cyan}
+format-prefix = ""
+format-prefix-font = 2
+format-prefix-foreground = ${color.purple}
+format-underline = ${color.purple}
 label = %percentage:2%%
 
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${solarized.violet}
-format-underline = ${solarized.violet}
-label = %percentage_used%%
+format-prefix = " "
+format-prefix-font = 2
+format-prefix-foreground = ${color.violet}
+format-underline = ${color.violet}
+label = %mb_free%/%mb_total%
 
 
 [module/eth]
 type = internal/network
 interface = ${networkinterface.wired}
 interval = 3
-format-connected-underline = ${solarized.yellow}
+format-connected-underline = ${color.yellow}
 format-connected-prefix = "ETH: "
-format-connected-prefix-foreground = ${solarized.yellow}
+format-connected-prefix-foreground = ${color.yellow}
 label-connected = "%downspeed% %local_ip%"
 
 
@@ -161,9 +175,10 @@ label-connected = "%downspeed% %local_ip%"
 type = internal/network
 interface = ${networkinterface.wlan}
 interval = 3
-format-connected-prefix = "WLAN: "
-format-connected-prefix-foreground = ${solarized.yellow}
-format-connected-underline = ${solarized.yellow}
+format-connected-prefix = "﬉ "
+format-connected-prefix-font = 2
+format-connected-prefix-foreground = ${color.blue}
+format-connected-underline = ${color.blue}
 label-connected = "%downspeed% %essid%"
 
 [module/powermenu]
@@ -173,12 +188,13 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = ""
-label-open-foreground = ${solarized.red}
+label-open = " "
+label-open-font = 3
+label-open-foreground = ${color.red}
 label-close = cancel
-label-close-foreground = ${solarized.base3}
+label-close-foreground = ${color.base3}
 label-separator = |
-label-separator-foreground = ${solarized.cyan}
+label-separator-foreground = ${color.cyan}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -194,6 +210,15 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/fedora-logo]
+type = custom/text
+content = " "
+content-font = 2
+content-padding = 0
+content-foreground = ${color.blue}
+
+click-left = rofi -show run
 
 [settings]
 screenchange-reload = true
