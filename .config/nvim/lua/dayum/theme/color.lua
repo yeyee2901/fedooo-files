@@ -3,7 +3,7 @@ require('material').setup {
   contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
   borders = true, -- Enable borders between verticaly split windows
 
-  popup_menu = 'dark', -- Popup menu style ( can be: 'dark', 'light', 'colorful' or 'stealth' )
+  popup_menu = 'colorful', -- Popup menu style ( can be: 'dark', 'light', 'colorful' or 'stealth' )
 
   italics = {
     comments = false, -- Enable italic comments
@@ -39,3 +39,4 @@ vim.cmd [[colorscheme material]]
 
 vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=none]]
 vim.cmd [[autocmd BufEnter * highlight Normal guibg=none]]
+vim.cmd[[highlight NormalFloat guibg=none]]
