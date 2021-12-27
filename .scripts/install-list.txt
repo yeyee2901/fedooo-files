@@ -4,13 +4,12 @@ zsh
 gcc
 g++
 vim
-neovim
 xclip
 tmux
 htop
 rofi
 polybar
-compton
+picom
 nitrogen
 python3-pip
 nodejs
