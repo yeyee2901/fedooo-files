@@ -98,8 +98,8 @@ time = "%H:%M"
 time-alt = 
 format-prefix = "﨟"
 format-prefix-font = 2
-format-prefix-foreground = ${color.orange}
-format-underline = ${color.orange}
+format-prefix-foreground = ${color.yellow}
+format-underline = ${color.yellow}
 label = %date% %time%
 
 [module/xwindow]
@@ -166,10 +166,10 @@ type = internal/network
 interface = ${networkinterface.wired}
 interval = 3
 format-connected-underline = ${color.yellow}
-format-connected-prefix = "ETH: "
+format-connected-prefix = " "
+format-connected-font = 2
 format-connected-prefix-foreground = ${color.yellow}
 label-connected = "%downspeed% %local_ip%"
-
 
 [module/wlan]
 type = internal/network
@@ -185,7 +185,6 @@ label-connected = "%downspeed% %essid%"
 type = custom/menu
 
 expand-right = true
-
 format-spacing = 1
 
 label-open = " "
