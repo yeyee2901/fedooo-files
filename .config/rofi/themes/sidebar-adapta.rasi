@@ -47,7 +47,7 @@ configuration {
 }
 
 #mainbox {
-        children: [ entry, listview, mode-switcher ];
+        children: [ mode-switcher, entry, listview ];
 }
 
 entry {
