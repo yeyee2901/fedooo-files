@@ -1,6 +1,6 @@
 require('material').setup {
 
-  contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
+  contrast = false, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
   borders = true, -- Enable borders between verticaly split windows
 
   popup_menu = 'colorful', -- Popup menu style ( can be: 'dark', 'light', 'colorful' or 'stealth' )
@@ -33,10 +33,11 @@ require('material').setup {
   custom_highlights = {}, -- Overwrite highlights with your own
 }
 
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'palenight'
 
 vim.cmd [[colorscheme material]]
 
 vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=none]]
 vim.cmd [[autocmd BufEnter * highlight Normal guibg=none]]
 vim.cmd[[highlight NormalFloat guibg=none]]
+vim.cmd[[autocmd BufEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=none]]

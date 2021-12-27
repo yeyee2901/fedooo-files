@@ -15,6 +15,7 @@ local my_options = {
   ignorecase = true, -- ignore case for search commands
   timeout = true, -- set keystroke timeout to be longer
   timeoutlen = 2000, -- in this case 2 seconds (pardon, I have slow hand sickness)
+  updatetime = 1000,
   hlsearch = false, -- Toggle with <S-h>
   hidden = true,
   termguicolors = true,
