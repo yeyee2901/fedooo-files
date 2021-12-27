@@ -95,3 +95,15 @@ map('n', '<Leader>tu', '<cmd>Telescope ultisnips<CR>', opts)
 
 -- PLUGIN: Formatter
 map('n', '<Leader>ff', '<cmd>Format<CR>', opts)
+
+-- PLUGIN: VimWiki
+map('n', '<Leader>wj', '<cmd>VimwikiNextLink<CR>', opts)
+map('n', '<Leader>wk', '<cmd>VimwikiPrevLink<CR>', opts)
+map('n', '<Leader>wtl', '<cmd>VimwikiToggleListItem<CR>', opts)
+map('n', '<Leader>wtbc', '<cmd>VimwikiTable<CR>', opts)
+map('n', '<Leader>wtbl', '<cmd>VimwikiTableMoveColumnRight<CR>', opts)
+map('n', '<Leader>wtbh', '<cmd>VimwikiTableMoveColumnLeft<CR>', opts)
+map('n', '<Leader>wa', '<cmd>VimwikiAll2HTML<CR>', opts)
+map('n', '<CR><CR>', '<cmd>VimwikiFollowLink<CR>', opts)
+map('n', '<CR>s', '<cmd>VimwikiSplitLink<CR>', opts)
+map('n', '<CR>v', '<cmd>VimwikiVSplitLink<CR>', opts)

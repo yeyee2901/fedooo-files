@@ -70,6 +70,14 @@ require('packer').startup(function(use)
     end,
   }
 
+  -- NOTE TAKING
+  use {
+    'vimwiki/vimwiki',
+    config = function()
+      vim.cmd [[source $HOME/.config/nvim/lua/dayum/plugins/vimwiki.vim]]
+    end,
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
