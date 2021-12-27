@@ -158,7 +158,7 @@ format-prefix = " "
 format-prefix-font = 2
 format-prefix-foreground = ${color.violet}
 format-underline = ${color.violet}
-label = %mb_free%/%mb_total%
+label = %mb_used% / %mb_total%
 
 
 [module/eth]
