@@ -1,6 +1,24 @@
-/** Basic config file **/
+/*
+ ____     ___    _____   ___ 
+|  _ \   / _ \  |  ___| |_ _|
+| |_) | | | | | | |_     | | 
+|  _ <  | |_| | |  _|    | | 
+|_| \_\  \___/  |_|     |___|
+                             
+Config file for Fedora 35 i3
+by: yeyee2901
+14 November 2021
+
+*/
+
 
 configuration {
-  show-icons:         true;
-  icon-theme:         "Papirus";
+    modi: "window,run";
+    font: "mono 12";
+    show-icons: true;
+    terminal: "kitty";
+    run-command: "{cmd}";
+    fullscreen: false;
 }
+
+@import "themes/sidebar-adapta.rasi"

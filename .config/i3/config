@@ -64,7 +64,7 @@ bindsym $mod+t exec $terminal
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+Return exec ~/.config/rofi/bin/launcher_ribbon
+bindsym $mod+Return exec rofi -show run
 
 # Start firefox
 bindsym $mod+b exec firefox
