@@ -92,14 +92,23 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true
 
+-- npm i -g vscode-langservers-extracted
 lspconfig.html.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
 }
 
+-- npm i -g typescript typescript-language-server
 lspconfig.tsserver.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
+}
+
+-- npm i -g bashls
+lspconfig.bashls.setup {
+  capabilities = capabilities,
+  on_attach = custom_on_attach,
+  filetypes = { "bash", "zsh", "sh" }
 }
 
 -- SUMNEKO LUA
