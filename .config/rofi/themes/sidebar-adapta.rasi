@@ -1,7 +1,6 @@
 /*
 *
-* MODIFIED
- * sidetab-adapta theme,
+ * MODIFIED (by yeyee2901) sidetab-adapta theme,
  * based on sidetab theme by deadguy.
  *
  * This theme has been dedicated to the public domain.
@@ -14,7 +13,7 @@ configuration {
 }
 
 * {
-        background-color:           #11021f;
+        background-color:           #2c006e;
         text-color:                 #ffffff;
 
         accent-color:               #00bcd4;
