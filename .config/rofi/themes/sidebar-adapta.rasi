@@ -18,7 +18,8 @@ configuration {
 
         accent-color:               #00bcd4;
         accent2-color:              #4db6ac;
-        hover-color:                #39454b;
+        hover-color:                #5200cc;
+       /* hover-color:                #39454b; */
         urgent-color:               #ff5252;
         window-color:               #ffffff;
 
