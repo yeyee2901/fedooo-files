@@ -97,14 +97,14 @@ cursor-click = pointer
 type = internal/date
 interval = 5
 date =
-date-alt = " %A, %d %B %Y"
+date-alt = "%A, %d %B %Y"
 time = "%H:%M"
 time-alt = 
 format-prefix = "﨟"
 format-prefix-font = 2
 format-prefix-foreground = ${color.yellow}
 format-underline = ${color.yellow}
-label = %date% %time%
+label = " %date%%time%"
 
 
 ; Window title
