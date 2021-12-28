@@ -35,3 +35,4 @@ export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
 
 export EDITOR="vi"
+export BAT_THEME="Coldark-Dark"
