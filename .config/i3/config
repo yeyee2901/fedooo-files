@@ -127,10 +127,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # SCRATCHPAD
-# Make the currently focused window a scratchpad
+
+# create scratchpad terminal & automatically send it to scratchpad
+for_window [class="^scratch"] move scratchpad
+bindsym $mod+Ctrl+minus exec $HOME/.config/i3/scripts/create-scratch-terminal.sh
+
+# make current window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-# Show the first scratchpad window
+# view the scratchpad, by default scratchpad is created on the background
+# to check if it exists, view it
 bindsym $mod+minus scratchpad show
 
 # WORKSPACES
