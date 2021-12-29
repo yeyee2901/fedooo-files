@@ -21,3 +21,5 @@ libreoffice
 gimp
 kitty
 xset
+sxhkd
+bspwm
