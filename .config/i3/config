@@ -214,16 +214,23 @@ bindsym $mod+r mode "resize"
 
 # WINDOW RULES
 # Automatic move to workspace
-for_window [class="^kitty"]     move container to workspace $workspace1
-for_window [class="^Firefox"]   move container to workspace $workspace2
-for_window [title="^WhatsApp"]  move container to workspace $workspace3
+# run 'xprop' to know the window class / window name
+for_window [class="^kitty"]        move container to workspace $workspace1
+for_window [class="^Firefox"]      move container to workspace $workspace2
+for_window [title="^WhatsApp"]     move container to workspace $workspace3
 for_window [class="(?i)zoom"]      move container to workspace $workspace4
-for_window [class="(?i)Gimp"]   move container to workspace $workspace5
+for_window [class="(?i)Gimp"]      move container to workspace $workspace5
 for_window [class="(?i)discord"]   move container to workspace $workspace7
 for_window [title="(?i)YouTube"]   move container to workspace $workspace8
 
+# Setup Applications goes to ws9 automatically
+for_window [class="(?i)^nitrogen"]             move container to workspace $workspace9
+for_window [class="(?i)^arandr"]               move container to workspace $workspace9
+for_window [class="(?i)^pavucontrol"]          move container to workspace $workspace9
+for_window [class="(?i)^nm-connection-editor"] move container to workspace $workspace9
+
 # other rules
-for_window [class="(?i)Thunar"] floating enable
+for_window [class="(?i)Thunar"]    floating enable
 
 # AUTOSTART SCRIPTS
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
