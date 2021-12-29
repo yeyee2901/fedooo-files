@@ -33,7 +33,7 @@ set $terminal kitty
 
 # Disable bar, use polybar instead
 bar { 
-    mode hide
+    mode invisible
     hidden_state hide
     modifier none
     tray_output none
