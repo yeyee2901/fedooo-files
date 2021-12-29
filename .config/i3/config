@@ -8,6 +8,13 @@
 # date: 15 November 2021
 # main machine: Fedora 35 - i3 edition
 
+# COLORS
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 # VARIABLE DECLARATIONS
 set $mod Mod4
@@ -166,6 +173,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # POWERMENU
 bindsym $mod+Ctrl+q exec $HOME/.config/rofi/rofi-scripts/powermenu/powermenu.sh
 
+# CLEAR NOTIFICATION
+bindsym $mod+F12 exec killall dunst
 
 # RESIZING
 mode "resize" {
