@@ -39,5 +39,5 @@ vim.cmd [[colorscheme material]]
 
 vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=none]]
 vim.cmd [[autocmd BufEnter * highlight Normal guibg=none]]
-vim.cmd[[highlight NormalFloat guibg=none]]
-vim.cmd[[autocmd BufEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=none]]
+vim.cmd [[highlight NormalFloat guibg=none]]
+vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=none]]

@@ -1,3 +1,9 @@
+local formatter_result, formatter_ok = pcall(require, 'formatter')
+
+if not formatter_ok then
+  return
+end
+
 -- install prettier in your projects
 local prettier = function()
   return {

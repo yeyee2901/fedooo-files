@@ -1,3 +1,9 @@
+local telescope_result, telescope_ok = pcall(require, 'telescope')
+
+if not telescope_ok then
+  return
+end
+
 local preview_size = 30 -- 50% of the screen size
 local transparency = 0 -- in percent
 

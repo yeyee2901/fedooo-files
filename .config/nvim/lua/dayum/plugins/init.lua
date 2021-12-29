@@ -82,9 +82,16 @@ require('packer').startup(function(use)
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require('dayum.plugins.colorizer')
     end,
   }
+
+  -- COMMENTARY PLUGIN
+  use { 'tpope/vim-commentary' }
+
+  -- BRACKET & SURROUND PLUGIN
+  use { 'jiangmiao/auto-pairs' }
+  use { 'tpope/vim-surround' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
