@@ -193,11 +193,11 @@ label-urgent-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
+format-prefix = " "
 format-prefix-font = 2
 format-prefix-foreground = ${color.purple}
 format-underline = ${color.purple}
-label = %percentage:2%%
+label = %percentage%%
 
 
 [module/memory]
