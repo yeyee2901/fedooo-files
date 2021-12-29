@@ -9,7 +9,8 @@
 # main machine: Fedora 35 - i3 edition
 
 # COLORS
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# class                 border  backgr. text    indicator child_border
+client.focused          #883488 #883488 #ffffff #883488   #883488
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -215,13 +216,15 @@ bindsym $mod+r mode "resize"
 # WINDOW RULES
 # Automatic move to workspace
 # run 'xprop' to know the window class / window name
-for_window [class="^kitty"]        move container to workspace $workspace1
-for_window [class="^Firefox"]      move container to workspace $workspace2
-for_window [title="^WhatsApp"]     move container to workspace $workspace3
-for_window [class="(?i)zoom"]      move container to workspace $workspace4
-for_window [class="(?i)Gimp"]      move container to workspace $workspace5
-for_window [class="(?i)discord"]   move container to workspace $workspace7
-for_window [title="(?i)YouTube"]   move container to workspace $workspace8
+for_window [class="^kitty"]                move container to workspace $workspace1
+for_window [class="^Firefox"]              move container to workspace $workspace2
+for_window [title="^WhatsApp"]             move container to workspace $workspace3
+for_window [class="(?i)zoom"]              move container to workspace $workspace4
+for_window [class="^obs"]                  move container to workspace $workspace4
+for_window [class="(?i)Gimp"]              move container to workspace $workspace5
+for_window [class="(?i)^libreoffice*"]     move container to workspace $workspace6
+for_window [class="(?i)discord"]           move container to workspace $workspace7
+for_window [title="(?i)YouTube"]           move container to workspace $workspace8
 
 # Setup Applications goes to ws9 automatically
 for_window [class="(?i)^nitrogen"]             move container to workspace $workspace9
