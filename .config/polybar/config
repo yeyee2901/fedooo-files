@@ -63,48 +63,11 @@ font-0 = JetBrainsMonoMedium NF-Bold:size=10
 font-1 = JetBrainsMonoMedium NF-Bold:size=20;3
 font-2 = JetBrainsMonoMedium NF-Bold:size=20;5
 font-3 = JetBrainsMonoMedium NF-Bold:size=15;2
-font-4 = JetBrainsMonoMedium NF-Bold:size=20;5
+font-4 = JetBrainsMonoMedium NF-Bold:size=25;5
 
 monitor = ${env:MONITOR:}
 
-modules-left = fedora-logo i3
-modules-center = xwindow
-modules-right = date cpu memory filesystem wlan eth power
-
-width = 100%
-height = 27
-fixed-center = false
-padding-right = 1
-
-background = ${color.black}
-foreground = ${color.base3}
-
-line-size = 4
-
-module-margin-left = 1
-module-margin-right = 2
-
-tray-position = right
-tray-padding = 2
-tray-reparent = true
-tray-background = ${color.tray-bg-color}
-tray-maxsize = 16
-
-cursor-click = pointer
-
-
-; MAIN STATUS BAR for BSPWM
-[bar/main-bspwm]
-
-; format: <font name>-<variant>:size=<num>;<offset y>
-font-0 = JetBrainsMonoMedium NF-Bold:size=10
-font-1 = JetBrainsMonoMedium NF-Bold:size=20;3
-font-2 = JetBrainsMonoMedium NF-Bold:size=20;5
-font-3 = JetBrainsMonoMedium NF-Bold:size=15;2
-
-monitor = ${env:MONITOR:}
-
-modules-left = fedora-logo bspwm
+modules-left = fedora-logo i3 bspwm
 modules-center = xwindow
 modules-right = date cpu memory filesystem wlan eth power
 
@@ -148,6 +111,38 @@ label = " %date%%time%"
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:15:...%
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+
+ws-icon-0 = "1:"
+ws-icon-1 = "2:"
+ws-icon-2 = "3:甆"
+ws-icon-3 = "4:"
+ws-icon-4 = "5:"
+
+label-focused-font = 1
+label-focused = %name%
+label-focused-background = ${color.black}
+label-focused-foreground = ${color.magenta}
+label-focused-underline= ${color.magenta}
+label-focused-padding = 2
+
+label-occupied = %name%
+label-occupied-font = 1
+label-occupied-padding = 2
+label-occupied-foreground = ${color.blue}
+
+label-urgent = %name%
+label-urgent-font = 1
+label-urgent-background = ${colors.red}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-font = 1
+label-empty-foreground = ${color.base3}
+label-empty-padding = 2
 
 
 [module/i3]

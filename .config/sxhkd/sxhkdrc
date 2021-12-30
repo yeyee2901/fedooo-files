@@ -1,26 +1,36 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
-super + t
-	kitty
-
-# program launcher
-super + Return
-	rofi -show run
+#               _       _          _               
+#  ___  __  __ | |__   | | __   __| |  _ __    ___ 
+# / __| \ \/ / | '_ \  | |/ /  / _` | | '__|  / __|
+# \__ \  >  <  | | | | |   <  | (_| | | |    | (__ 
+# |___/ /_/\_\ |_| |_| |_|\_\  \__,_| |_|     \___|
+#                                                  
+# Keyboard hotkeys daemon config
+# Config by: yeyee2901
+# last edit: Dec 2021
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+# terminal emulator
+super + t
+	kitty
 
-# quit/restart bspwm
-super + ctrl + {q,r}
-	bspc {quit,wm -r}
+# firefox
+super + b
+    firefox
+
+# program launcher
+super + Return
+	rofi -show run
+
+# powermenu
+super + ctrl + q
+    $HOME/.config/rofi/rofi-scripts/powermenu/powermenu-bspwm.sh
+
+# reload bspwm
+super + ctrl + r
+    bspc wm -r
 
 # close and kill
 super + q
