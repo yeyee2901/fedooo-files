@@ -56,7 +56,14 @@ base3 = #fdf6e3
 
 
 ; MAIN STATUS BAR, TOP ONLY
-[bar/main]
+[bar/i3-bar]
+override-redirect = false
+wm-restack = i3
+monitor = ${env:MONITOR:}
+
+modules-left = fedora-logo i3
+modules-center = xwindow
+modules-right = date cpu memory filesystem wlan eth power
 
 ; format: <font name>-<variant>:size=<num>;<offset y>
 font-0 = JetBrainsMonoMedium NF-Bold:size=10
@@ -65,32 +72,60 @@ font-2 = JetBrainsMonoMedium NF-Bold:size=20;5
 font-3 = JetBrainsMonoMedium NF-Bold:size=15;2
 font-4 = JetBrainsMonoMedium NF-Bold:size=25;5
 
-monitor = ${env:MONITOR:}
-
-modules-left = fedora-logo i3 bspwm
-modules-center = xwindow
-modules-right = date cpu memory filesystem wlan eth power
-
 width = 100%
 height = 27
 fixed-center = false
 padding-right = 1
+module-margin-left = 1
+module-margin-right = 2
 
 background = ${color.black}
 foreground = ${color.base3}
 
 line-size = 4
 
+tray-position = right
+tray-padding = 2
+tray-reparent = true
+tray-background = ${color.tray-bg-color}
+tray-maxsize = 16
+cursor-click = pointer
+
+[bar/bspwm-bar]
+override-redirect = false
+wm-restack = bspwm
+monitor = ${env:MONITOR:}
+
+modules-left = fedora-logo bspwm
+modules-center = 
+modules-right = date cpu memory filesystem wlan eth power
+
+; format: <font name>-<variant>:size=<num>;<offset y>
+font-0 = JetBrainsMonoMedium NF-Bold:size=10
+font-1 = JetBrainsMonoMedium NF-Bold:size=20;3
+font-2 = JetBrainsMonoMedium NF-Bold:size=20;5
+font-3 = JetBrainsMonoMedium NF-Bold:size=15;2
+font-4 = JetBrainsMonoMedium NF-Bold:size=25;5
+
+width = 100%
+height = 27
+fixed-center = false
+padding-right = 1
 module-margin-left = 1
 module-margin-right = 2
+
+background = ${color.black}
+foreground = ${color.base3}
+
+line-size = 4
 
 tray-position = right
 tray-padding = 2
 tray-reparent = true
 tray-background = ${color.tray-bg-color}
 tray-maxsize = 16
-
 cursor-click = pointer
+
 
 ; MODULES
 [module/date]

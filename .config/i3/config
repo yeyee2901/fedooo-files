@@ -63,10 +63,10 @@ floating_modifier $mod
 
 # KEYBINDINGS
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Ctrl+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Ctrl+r restart
 
 # start a terminal
 bindsym $mod+t exec $terminal
