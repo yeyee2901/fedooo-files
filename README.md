@@ -52,6 +52,7 @@ $HOME/.scripts/fresh-install.sh
    - default terminal: **Kitty**
 - **Tmux** - For terminal session management
 - **polybar** - Customizable status bar with icons (from JetBrainsMono Nerd Font)
+- **Flameshot** - Screenshot utility. Just press your `PrintScreen` key!
 - fresh install script with customizable install list
 
 - EDITOR: **Neovim 0.6.0** :
