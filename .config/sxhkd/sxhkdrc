@@ -24,6 +24,14 @@ super + b
 super + Return
 	rofi -show run
 
+# file browser
+super + f
+    thunar
+
+# Printscreen
+Print
+    flameshot gui
+
 # powermenu
 super + ctrl + q
     $HOME/.config/rofi/rofi-scripts/powermenu/powermenu-bspwm.sh

@@ -1,3 +1,5 @@
+
+
 #  _   _____          __        __  __  __  
 # (_) |___ /          \ \      / / |  \/  | 
 # | |   |_ \   _____   \ \ /\ / /  | |\/| | 
@@ -6,16 +8,6 @@
 #                                           
 # Config by yeyee2901
 # date: 15 November 2021
-# main machine: Fedora 35 - i3 edition
-
-# COLORS
-# class                 border  backgr. text    indicator child_border
-client.focused          #883488 #883488 #ffffff #883488   #883488
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
 
 # WORKSPACES
 set $workspace1 "1:"
@@ -234,6 +226,15 @@ for_window [class="(?i)^nm-connection-editor"] move container to workspace $work
 
 # other rules
 for_window [class="(?i)Thunar"]    floating enable
+
+# COLORS
+# class                 border  backgr. text    indicator child_border
+client.focused          #883488 #883488 #ffffff #883488   #883488
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 # AUTOSTART SCRIPTS
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh

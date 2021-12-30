@@ -116,33 +116,27 @@ label = %title:0:15:...%
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-ws-icon-0 = "1:"
-ws-icon-1 = "2:"
-ws-icon-2 = "3:甆"
-ws-icon-3 = "4:"
-ws-icon-4 = "5:"
-
-label-focused-font = 1
 label-focused = %name%
+label-focused-font = 3
 label-focused-background = ${color.black}
 label-focused-foreground = ${color.magenta}
 label-focused-underline= ${color.magenta}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %name%
-label-occupied-font = 1
-label-occupied-padding = 2
+label-occupied-font = 3
+label-occupied-padding = 1
 label-occupied-foreground = ${color.blue}
 
 label-urgent = %name%
-label-urgent-font = 1
+label-urgent-font = 3
 label-urgent-background = ${colors.red}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %name%
-label-empty-font = 1
+label-empty-font = 3
 label-empty-foreground = ${color.base3}
-label-empty-padding = 2
+label-empty-padding = 1
 
 
 [module/i3]
