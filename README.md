@@ -1,6 +1,14 @@
 # Dotfiles Fedora
 My minimalistic dotfiles for Fedora 35 - i3 edition
-![image](https://user-images.githubusercontent.com/55247343/142818398-c57ede17-50e5-4e74-9780-c956d7adc709.png)
+
+## NEW FEATURES
+Now this dotfiles repo can also be used on `bspwm` window manager!
+Here's some screenshot of it:
+
+
+Although the setup are almost identical, but how `i3` works and how bspwm works is different. Some of you maybe wondering why would I create 2 identical config (also with identical looks), this is because I'm often confused on how `i3` handles multi-monitor setup (which is shared workspace behaviour), while in `bspwm` case, it would handle multi monitors as if each monitor have it's own set of workspaces, and they're not shared across monitors. I find these rather easier to handle (for my slow brain), so I tend to log in using `bspwm` when I'm on multi-monitor setup. You can chose whichever, I won't force you to join either side, because 'Linux is FREEDOM', what you chose is what you get.
+
+Also, Kuchiki Rukia = SIMP guehehehe.
 
 ## Fresh install
 
