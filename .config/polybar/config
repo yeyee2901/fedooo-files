@@ -32,7 +32,8 @@ wlan = "wlo1"
 
 
 [color]
-black = #121222
+; transparent background #<2 digit transparency><6 digit hex color>
+black = #bb121222
 back = #002b36
 red = #dc322f
 green = #859900
@@ -42,7 +43,7 @@ magenta = #d33682
 cyan = #2aa198
 orange = #cb4b16
 purple = #ff36ff
-dpurple = #9936dd
+tray-bg-color = #999936dd
 
 base00 = #657b83
 base01 = #586e75
@@ -86,7 +87,7 @@ module-margin-right = 2
 tray-position = right
 tray-padding = 2
 tray-reparent = true
-tray-background = ${color.dpurple}
+tray-background = ${color.tray-bg-color}
 tray-maxsize = 16
 
 cursor-click = pointer
@@ -123,7 +124,7 @@ module-margin-right = 2
 tray-position = right
 tray-padding = 2
 tray-reparent = true
-tray-background = ${color.dpurple}
+tray-background = ${color.tray-bg-color}
 tray-maxsize = 16
 
 cursor-click = pointer
@@ -270,7 +271,7 @@ label-unmounted-foreground = ${colors.base3}
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
-;compositing-background = screen
+compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
 pseudo-transparency = true
