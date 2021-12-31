@@ -12,6 +12,10 @@
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# Screen lock utility
+super + ctrl + Escape
+    XSECURELOCK_PASSWORD_PROMPT=asterisks XSECURELOCK_COMPOSITE_OBSCURER=0 xsecurelock
+
 # terminal emulator
 super + t
 	kitty

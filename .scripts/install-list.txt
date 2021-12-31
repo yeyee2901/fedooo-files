@@ -23,4 +23,5 @@ kitty
 xset
 sxhkd
 bspwm
+xsecurelock
 materia-gtk-theme
