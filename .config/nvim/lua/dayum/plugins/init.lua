@@ -82,7 +82,7 @@ require('packer').startup(function(use)
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('dayum.plugins.colorizer')
+      require 'dayum.plugins.colorizer'
     end,
   }
 
@@ -92,6 +92,14 @@ require('packer').startup(function(use)
   -- BRACKET & SURROUND PLUGIN
   use { 'jiangmiao/auto-pairs' }
   use { 'tpope/vim-surround' }
+
+  -- REMOTE EDITING
+  use {
+    'chipsenkbeil/distant.nvim',
+    config = function()
+      require 'dayum.plugins.distant'
+    end,
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
