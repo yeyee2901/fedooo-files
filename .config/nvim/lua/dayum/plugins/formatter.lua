@@ -7,7 +7,7 @@ end
 -- install prettier in your projects
 local prettier = function()
   return {
-    exe = './node_modules/.bin/prettier',
+    exe = 'prettier',
     stdin = true,
     args = {
       '--stdin-filepath',
