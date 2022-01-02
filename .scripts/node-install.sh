@@ -7,6 +7,7 @@ npm i -g \
     pyright \
     typescript \
     typescript-language-server \
+    prettier \
     vim-language-server \
     vscode-langservers-extracted \
     clang-format
