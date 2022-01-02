@@ -36,6 +36,22 @@ super + f
 Print
     flameshot gui
 
+# Volume UP
+XF86AudioRaiseVolume 
+    $HOME/.config/i3/scripts/volume-up.sh
+
+# Volume DOWN
+XF86AudioLowerVolume
+    $HOME/.config/i3/scripts/volume-down.sh
+
+# Volume MUTE
+XF86AudioMute 
+    $HOME/.config/i3/scripts/muted.sh
+
+# Mic MUTE
+XF86AudioMicMute 
+    $HOME/.config/i3/scripts/mic-muted.sh
+
 # powermenu
 super + ctrl + q
     $HOME/.config/rofi/rofi-scripts/powermenu/powermenu-bspwm.sh
@@ -65,7 +81,7 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {shift + t,shift + p, shift + f, shift + m}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
@@ -140,4 +156,4 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-10 0,0 20,0 -10,10 0}
