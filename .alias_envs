@@ -1,13 +1,16 @@
 #!/usr/bin/bash
-. "$HOME/.cargo/env"
 
+# PATHS
 export NPM_PACKAGES=$HOME/.npm-packages
 export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
 export PATH=$NPM_PACKAGES/bin:$PATH
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
+export PATH=$HOME/bin:$PATH
 
-# TMUX aliases
+# ALIASES
 alias t='env TERM=tmux-256color tmux'
 alias tls='t list-session'
 alias tat='t attach-session'
@@ -16,11 +19,6 @@ alias tneww='t new-window -n'
 alias tkills='t kill-session -t'        # kill session, specify session name
 alias tkillw='t kill-window'            # kill current window
 alias tka='t kill-server'
-
-# (N)VIM aliases
-alias v="vim"
-alias nvim="nvim6"
-alias nv5="$HOME/bin/nvim"
 
 # exa
 alias l='exa -g --icons'
@@ -31,8 +29,9 @@ alias la='exa -g --icons -la'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Add pip install path to $PATH
-export PATH=$PATH:$HOME/.local/bin/
-export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
 
 export EDITOR="vi"
 export BAT_THEME="Coldark-Dark"
+
+# RUST
+. "$HOME/.cargo/env"
