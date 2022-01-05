@@ -93,10 +93,10 @@ bindsym $mod+f exec thunar
 bindsym Print exec flameshot gui
 
 # Send window to different monitor
-bindsym $mod+Up move workspace to output up
-bindsym $mod+Down move workspace to output down
-bindsym $mod+Right move workspace to output right
-bindsym $mod+left move workspace to output left
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Down move workspace to output down
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+left move workspace to output left
 
 # change focus (MOD + hjkl)
 bindsym $mod+h focus left
@@ -160,6 +160,10 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 
+# switch workspace using arrow key
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -211,6 +215,7 @@ bindsym $mod+r mode "resize"
 for_window [class="^kitty"]                move container to workspace $workspace1
 for_window [class="^Firefox"]              move container to workspace $workspace2
 for_window [title="^WhatsApp"]             move container to workspace $workspace3
+for_window [class="^TelegramDesktop"]      move container to workspace $workspace3
 for_window [class="(?i)zoom"]              move container to workspace $workspace4
 for_window [class="^obs"]                  move container to workspace $workspace4
 for_window [class="(?i)Gimp"]              move container to workspace $workspace5
