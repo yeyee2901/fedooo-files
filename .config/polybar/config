@@ -33,7 +33,7 @@ wlan = "wlo1"
 
 [color]
 ; transparent background #<2 digit transparency><6 digit hex color>
-black = #bb121222
+black = #aa001222
 back = #002b36
 red = #dc322f
 green = #859900
@@ -63,7 +63,7 @@ monitor = ${env:MONITOR:}
 
 modules-left = fedora-logo i3
 modules-center = xwindow
-modules-right = date cpu memory filesystem wlan eth power
+modules-right = date cpu memory fs-home wlan eth power
 
 ; format: <font name>-<variant>:size=<num>;<offset y>
 font-0 = JetBrainsMonoMedium NF-Bold:size=10
@@ -98,7 +98,7 @@ monitor = ${env:MONITOR:}
 
 modules-left = fedora-logo bspwm
 modules-center = 
-modules-right = date cpu memory filesystem wlan eth power
+modules-right = date cpu memory fs-home wlan eth power
 
 ; format: <font name>-<variant>:size=<num>;<offset y>
 font-0 = JetBrainsMonoMedium NF-Bold:size=10
@@ -274,22 +274,31 @@ content-padding = 0
 content-foreground = ${color.orange}
 click-left = "$HOME/.config/rofi/rofi-scripts/powermenu/powermenu.sh"
 
-
-[module/filesystem]
+[fs-base]
 type = internal/fs
-interval = 25
-
-mount-0 = /
-
-format-mounted = <label-mounted>
+fixed-values = true
 format-mounted-prefix = " "
 format-mounted-prefix-font = 4
 format-mounted-prefix-foreground = ${color.green}
 format-mounted-underline= ${color.green}
-label-mounted = "%free% free"
+
+
+[module/fs-root]
+inherit = fs-base
+mount-0 = /
+label-mounted = "/ : %free% free" 
 label-unmounted = ""
 label-unmounted-font = 4
-label-unmounted-foreground = ${colors.base3}
+label-unmounted-foreground = ${colors.red}
+
+[module/fs-home]
+inherit = fs-base
+mount-0 = /home
+label-mounted = "/home : %free% free"
+label-unmounted = ""
+label-unmounted-font = 4
+label-unmounted-foreground = ${colors.red}
+
 
 
 [settings]
