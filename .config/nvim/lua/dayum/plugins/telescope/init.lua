@@ -1,4 +1,4 @@
-local telescope_result, telescope_ok = pcall(require, 'telescope')
+local telescope_ok, _ = pcall(require, 'telescope')
 
 if not telescope_ok then
   return

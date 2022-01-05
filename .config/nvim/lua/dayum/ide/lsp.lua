@@ -92,6 +92,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true
 
+lspconfig.pyright.setup {
+  capabilities = capabilities,
+  on_attach = custom_on_attach,
+}
+
 -- npm i -g vscode-langservers-extracted
 lspconfig.html.setup {
   capabilities = capabilities,

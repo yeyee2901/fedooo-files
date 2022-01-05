@@ -1,6 +1,6 @@
-local result_cmp, cmp_ok = pcall(require, 'cmp')
-local result_lsp, lsp_ok = pcall(require, 'lspconfig')
-local result_ts, ts_ok = pcall(require, 'nvim-treesitter')
+local cmp_ok, _ = pcall(require, 'cmp')
+local lsp_ok, _ = pcall(require, 'lspconfig')
+local ts_ok, _ = pcall(require, 'nvim-treesitter')
 
 if cmp_ok and lsp_ok and ts_ok then
   require 'dayum.ide.treesitter'

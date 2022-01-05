@@ -1,4 +1,4 @@
-local gs_result, gs_ok = pcall(require, 'gitsigns')
+local gs_ok, _ = pcall(require, 'gitsigns')
 
 if gs_ok then
   require('gitsigns').setup {

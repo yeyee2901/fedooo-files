@@ -1,4 +1,4 @@
-local formatter_result, formatter_ok = pcall(require, 'formatter')
+local formatter_ok, _ = pcall(require, 'formatter')
 
 if not formatter_ok then
   return
