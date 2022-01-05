@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-# For Tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Install the software lists
 /usr/bin/cat $HOME/.scripts/install-list.txt | xargs -n1 -I {} sudo dnf install -y {}
 
@@ -15,7 +12,7 @@ chmod +x $HOME/.scripts/lsp-install.sh
 $HOME/.scripts/node-install.sh
 
 # install pip packages
-/usr/bin/ls $HOME/.scripts/pip-list.txt | xargs -n1 -I {} pip3 install {}
+pip3 install -r $HOME/.scripts/pip-list.txt
 
 # Apply italics patch for tmux
 tic $HOME/.screen-256color.terminfo
@@ -26,5 +23,4 @@ sudo dnf install snap && sudo ln -s /var/lib/snapd/snap /snap && sudo snap insta
 # Install rust things
 # Rust toolchain
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install exa bat
-cargo install stylua
+cargo install exa bat stylua
