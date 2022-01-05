@@ -14,9 +14,6 @@ $HOME/.scripts/node-install.sh
 # install pip packages
 pip3 install -r $HOME/.scripts/pip-list.txt
 
-# Apply italics patch for tmux
-tic $HOME/.screen-256color.terminfo
-
 # Install ccls via snap :( , sadly it's only available on snap for fedora
 sudo dnf install snap && sudo ln -s /var/lib/snapd/snap /snap && sudo snap install ccls
 

@@ -5,7 +5,6 @@ gcc
 g++
 vim
 xclip
-tmux
 htop
 rofi
 polybar
